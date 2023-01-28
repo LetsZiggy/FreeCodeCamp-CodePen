@@ -1,0 +1,38 @@
+.wrapper
+  .mdl-card
+    .mdl-card__title.mdl-card--expand.mdl-shadow--2dp
+      h4#quote
+        | Choosing a quote for you...
+      h6#author
+        | - good things come to those who wait
+    p
+      | Quotes from 
+      a(href='https://quotesondesign.com/', target='_blank') QUOTES on DESIGN
+    button#get-quote.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+      i.material-icons play_arrow
+
+.tweet-this
+  a#tweet-btn.tweet-btn(href="", target="_blank")
+    img.img-responsive(src="https://upload.wikimedia.org/wikipedia/en/9/9f/Twitter_bird_logo_2012.svg", alt="Twitter Logo")
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.com/challenges/build-a-random-quote-machine', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click
+        li
+          a(href="https://quotesondesign.com/api-v4-0/" target="_blank") Quotes on Design API

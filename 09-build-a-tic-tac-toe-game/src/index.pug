@@ -1,0 +1,85 @@
+.wrapper
+  img.title(src="https://image.flaticon.com/icons/svg/434/434900.svg" alt="Icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY" title="Icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY")
+
+  .info The starting player is randomised!
+
+  #menu
+    .interactive
+      #play-mode
+        .mode-title Mode Select:
+        .mode
+          span.button(onclick="menuSelect(1, 'single')") Single Player
+          span.separator |
+          span.button(onclick="menuSelect(1, 'versus')") Versus
+
+      #icon-pick-one
+        .icon-title Player One's icon:
+        .icon
+          i.material-icons(onclick="menuSelect(2, 'camera')") camera
+          i.material-icons(onclick="menuSelect(2, 'all_out')") all_out
+          i.material-icons(onclick="menuSelect(2, 'grade')") grade
+          i.material-icons(onclick="menuSelect(2, 'change_history')") change_history
+
+      #icon-pick-two
+        .icon-title Player Two's icon:
+        .icon
+          i.material-icons(onclick="menuSelect(3, 'camera_alt')") camera_alt
+          i.material-icons(onclick="menuSelect(3, 'blur_circular')") blur_circular
+          i.material-icons(onclick="menuSelect(3, 'brightness_7')") brightness_7
+          i.material-icons(onclick="menuSelect(3, 'details')") details
+
+    #reset.go-back(onclick="menuSelect('reset', null)") Reset
+
+  #game
+    #spinner
+      .spinner
+        span
+        span
+        span
+
+    .turn
+      span Turn:
+      i.material-icons#turn-icon stop
+
+    #win-message(onclick="menuSelect('restart', null)")
+      p
+      p
+
+    .board
+      #board-0(onclick="gameClick(event, 0)")
+      #board-1(onclick="gameClick(event, 1)")
+      #board-2(onclick="gameClick(event, 2)")
+      #board-3(onclick="gameClick(event, 3)")
+      #board-4(onclick="gameClick(event, 4)")
+      #board-5(onclick="gameClick(event, 5)")
+      #board-6(onclick="gameClick(event, 6)")
+      #board-7(onclick="gameClick(event, 7)")
+      #board-8(onclick="gameClick(event, 8)")
+
+    #exit.go-back(onclick="menuSelect('exit', null)") Exit
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.org/challenges/build-a-tic-tac-toe-game', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click
+        li
+          a(href="https://codepen.io/devtips/pen/akRyZO" target="_blank") Spinners, Loaders, and Jazz
+        li
+          a(href="https://www.flaticon.com/free-icon/tic-tac-toe_434900#term=tic tac toe&page=1&position=26" target="_blank") Icon made by Freepik from www.flaticon.com (CC 3.0 BY)
+        li
+          a(href="https://www.youtube.com/watch?v=P2TcQ3h0ipQ" target="_blank") JavaScript Tic Tac Toe Project Tutorial - Unbeatable AI w/ Minimax Algorithm

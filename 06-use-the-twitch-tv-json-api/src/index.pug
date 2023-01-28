@@ -1,0 +1,44 @@
+.wrapper
+  .header
+    h2 Twitch Streamers
+    .radio-btn-container
+      input#radio-btn-online(type="radio" name="twitch")
+      label.radio-label-online(for="radio-btn-online")
+      input#radio-btn-all(type="radio" name="twitch" checked)
+      label.radio-label-all(for="radio-btn-all")
+      input#radio-btn-offline(type="radio" name="twitch")
+      label.radio-label-offline(for="radio-btn-offline")
+      .radio-toggle-bar
+      .radio-name-online ONLINE
+      .radio-name-all ALL
+      .radio-name-offline OFFLINE
+      .radio-toggle-circle
+    hr
+
+  .results
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click
+        li
+          a(href="https://cors-anywhere.herokuapp.com/" target="_blank") Heroku CORS Anywhere
+        li
+          a(href="https://dev.twitch.tv/docs/api" target="_blank") Twitch API
+        li
+          a(href="https://wind-bow.glitch.me/" target="_blank") FreeCodeCamp Twitch API Pass-through

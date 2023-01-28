@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Use the Twitch.tv JSON API</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Use the Twitch.tv JSON API</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="header">
+    <h2>Twitch Streamers</h2>
+    <div class="radio-btn-container">
+      <input id="radio-btn-online" type="radio" name="twitch"/>
+      <label class="radio-label-online" for="radio-btn-online"></label>
+      <input id="radio-btn-all" type="radio" name="twitch" checked="checked"/>
+      <label class="radio-label-all" for="radio-btn-all"></label>
+      <input id="radio-btn-offline" type="radio" name="twitch"/>
+      <label class="radio-label-offline" for="radio-btn-offline"></label>
+      <div class="radio-toggle-bar"></div>
+      <div class="radio-name-online">ONLINE</div>
+      <div class="radio-name-all">ALL</div>
+      <div class="radio-name-offline">OFFLINE</div>
+      <div class="radio-toggle-circle"></div>
+    </div>
+    <hr/>
+  </div>
+  <div class="results"></div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nbsp;for&nbsp;<a class="footer-link" href="https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+        <li><a href="https://cors-anywhere.herokuapp.com/" target="_blank">Heroku CORS Anywhere</a></li>
+        <li><a href="https://dev.twitch.tv/docs/api" target="_blank">Twitch API</a></li>
+        <li><a href="https://wind-bow.glitch.me/" target="_blank">FreeCodeCamp Twitch API Pass-through</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+.wrapper
+  #adjuster
+    h6.instruction Drag to change amount
+
+    .draggables
+      .drag(onmousedown="handleMouseDown(event, 'break')")
+        span -
+        .title Break Length
+        #break.amount 5 mins
+        span +
+
+      .drag(onmousedown="handleMouseDown(event, 'pomodoro')")
+        span -
+        .title Pomodoros
+        #pomodoro.amount 1 cycle
+        span +
+
+      .drag(onmousedown="handleMouseDown(event, 'session')")
+        span -
+        .title Session Length
+        #session.amount 25 mins
+        span +
+
+    .start(onclick="handleStartButton(event)")
+      i.material-icons play_arrow
+
+  #timer.hidden
+    audio#audio-work.hidden(src="https://www.soundjay.com/button/beep-07.mp3" type="audio/mp3")
+    audio#audio-break.hidden(src="https://www.soundjay.com/button/beep-08b.mp3" type="audio/mp3")
+
+    .clock
+      span#repeat 10
+      span#plural-repeat cycles
+      span.between |
+      span#type work
+      span.between |
+      span#minute 15
+      span#plural-minute mins
+      span#second 30
+      span#plural-second secs
+
+    .controller
+      input#radio-stop.hidden(type="radio" name="radio" onchange="handleController('stop')")
+      input#radio-pause.hidden(type="radio" name="radio" onchange="handleController('pause')")
+      input#radio-play.hidden(type="radio" name="radio" onchange="handleController('play')" checked)
+      label#stop-label(for="radio-stop")
+        i#stop.material-icons stop
+      label#pause-label(for="radio-pause")
+        i#pause.material-icons pause
+      label#play-label(for="radio-play")
+        i#play.material-icons play_arrow
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.org/challenges/build-a-pomodoro-clock', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click
+        li
+          a(href="https://www.soundjay.com/" target="_blank") SoundJay

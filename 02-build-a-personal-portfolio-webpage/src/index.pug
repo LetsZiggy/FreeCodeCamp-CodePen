@@ -1,0 +1,114 @@
+.mdl-grid
+  .mdl-cell.mdl-cell--8-col-desktop.mdl-cell--2-offset-desktop.mdl-cell--6-col-tablet.mdl-cell--1-offset-tablet.mdl-cell--4-col-phone.mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect.mdl-shadow--4dp
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#about') About.Me
+      a.mdl-tabs__tab(href='#portfolio') My.Portfolio
+      a.mdl-tabs__tab(href='#contact') Contact.Me
+
+    #about.mdl-tabs__panel.is-active
+      .well
+        img(src='https://upload.wikimedia.org/wikipedia/commons/d/df/Go_gopher_app_engine_color.jpg', alt='Golang Gopher Logo')
+        span.about-img-caption
+          | Image by&nbsp;
+          a.about-link(href='http://reneefrench.blogspot.sg/', target='_blank') Renee French
+          | &nbsp;@&nbsp;
+          a.about-link(href='https://commons.wikimedia.org/wiki/Category:Go_gopher#/media/File:Go_gopher_app_engine_color.jpg', target='_blank') Wikimedia
+          | .
+      .mdl-grid
+        .mdl-cell.mdl-cell--5-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+          p.centralized
+            strong Fusce | Ipsum | Tellus
+          p
+            | Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Vestibulum aliquam sit amet orci quis maximus.
+        .mdl-cell.mdl-cell--5-col-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.imaprog-parent
+          p.imaprog
+            | I'm a
+            br
+            | &lt;&#47;programmer&gt;
+
+    #portfolio.mdl-tabs__panel
+      .mdl-grid
+        .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+          h2.tab-title
+            em Stuff I Do
+        .mdl-cell.mdl-cell--4-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+          .well
+            img(src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png', alt='JavaScript Logo')
+            a.portfolio-caption(href='https://commons.wikimedia.org/wiki/File:JavaScript-logo.png', target='_blank')
+              .caption-frame
+                p Javascript
+                  br
+                  i.material-icons launch
+        .mdl-cell.mdl-cell--4-col-desktop.mdl-cell--2-offset-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+          .well
+            img(src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/480px-Python-logo-notext.svg.png', alt='Python Logo')
+            a.portfolio-caption(href='https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg', target='_blank')
+              .caption-frame
+                p Python
+                  br
+                  i.material-icons launch
+        .mdl-cell.mdl-cell--4-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+          .well
+            img(src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/480px-Ruby_logo.svg.png', alt='Ruby Logo')
+            a.portfolio-caption(href='https://commons.wikimedia.org/wiki/File:Ruby_logo.svg', target='_blank')
+              .caption-frame
+                p Ruby
+                  br
+                  i.material-icons launch
+        .mdl-cell.mdl-cell--4-col-desktop.mdl-cell--2-offset-desktop.mdl-cell--4-col-tablet.mdl-cell--4-col-phone
+          .well
+            img(src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Php_elephant_logo.svg/640px-Php_elephant_logo.svg.png', alt='PHP Logo')
+            a.portfolio-caption(href='https://commons.wikimedia.org/wiki/File:Php_elephant_logo.svg', target='_blank')
+              .caption-frame
+                p PHP
+                  br
+                  i.material-icons launch
+
+    #contact.mdl-tabs__panel
+      .mdl-grid
+        .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+          h2.tab-title
+            em Lets keep in contact
+      form#contactform(action='', method='')
+        .mdl-grid
+          .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#name.mdl-textfield__input(type='text', pattern='[a-zA-Z ]*[a-zA-Z]+')
+              label.mdl-textfield__label(for='name') Name
+              span.mdl-textfield__error Your name is required
+          .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#email.mdl-textfield__input(type='text', pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$')
+              label.mdl-textfield__label(for='email') Email
+              span.mdl-textfield__error Your email address is required
+          .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#phone.mdl-textfield__input(type='text', pattern='[0-9-]*[0-9]+$')
+              label.mdl-textfield__label(for='phone') Phone
+              span.mdl-textfield__error Digits only with hyphens for separation
+          .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            .mdl-textfield.mdl-js-textfield
+              textarea#message.mdl-textfield__input(type='text', rows='5')
+              label.mdl-textfield__label(for='message') Message
+          .mdl-cell.mdl-cell--10-col-desktop.mdl-cell--1-offset-desktop.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent.mdl-js-ripple-effect(type='submit', form='contactform', value='Submit') Submit
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click

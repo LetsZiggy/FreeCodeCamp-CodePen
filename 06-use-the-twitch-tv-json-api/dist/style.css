@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #FAFAFA;
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  width: 100%;
+  min-height: 80vh;
+  font-family: "Lato", monospace;
+}
+.wrapper .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.wrapper .header h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  line-height: 0.5em;
+  color: Black;
+  font-family: "Lato", monospace;
+}
+.wrapper .header .radio-btn-container {
+  position: relative;
+  width: 150px;
+  height: 20px;
+}
+.wrapper .header .radio-btn-container #radio-btn-online,
+.wrapper .header .radio-btn-container #radio-btn-all,
+.wrapper .header .radio-btn-container #radio-btn-offline {
+  display: none;
+}
+.wrapper .header .radio-btn-container #radio-btn-online:checked ~ .radio-name-online,
+.wrapper .header .radio-btn-container #radio-btn-all:checked ~ .radio-name-all,
+.wrapper .header .radio-btn-container #radio-btn-offline:checked ~ .radio-name-offline {
+  color: #FAFAFA;
+}
+.wrapper .header .radio-btn-container #radio-btn-online:checked ~ .radio-toggle-bar {
+  border-color: MediumSeaGreen;
+}
+.wrapper .header .radio-btn-container #radio-btn-all:checked ~ .radio-toggle-bar {
+  border-color: LightSlateGray;
+}
+.wrapper .header .radio-btn-container #radio-btn-offline:checked ~ .radio-toggle-bar {
+  border-color: IndianRed;
+}
+.wrapper .header .radio-btn-container #radio-btn-online:checked ~ .radio-toggle-circle {
+  background-color: MediumSeaGreen;
+  left: 0px;
+}
+.wrapper .header .radio-btn-container #radio-btn-all:checked ~ .radio-toggle-circle {
+  background-color: LightSlateGray;
+  left: 48px;
+}
+.wrapper .header .radio-btn-container #radio-btn-offline:checked ~ .radio-toggle-circle {
+  background-color: IndianRed;
+  left: 98px;
+}
+.wrapper .header .radio-btn-container .radio-label-online,
+.wrapper .header .radio-btn-container .radio-label-all,
+.wrapper .header .radio-btn-container .radio-label-offline {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+.wrapper .header .radio-btn-container .radio-label-online {
+  left: 0px;
+}
+.wrapper .header .radio-btn-container .radio-label-all {
+  left: 50px;
+}
+.wrapper .header .radio-btn-container .radio-label-offline {
+  left: 100px;
+}
+.wrapper .header .radio-btn-container .radio-toggle-bar {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  z-index: 2;
+  width: 150px;
+  height: 20px;
+  border: 2px solid LightSlateGray;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .header .radio-btn-container .radio-name-online,
+.wrapper .header .radio-btn-container .radio-name-all,
+.wrapper .header .radio-btn-container .radio-name-offline {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  top: -2px;
+  z-index: 4;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  line-height: 1em;
+  font-size: 0.65em;
+  font-weight: bolder;
+  color: Black;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .header .radio-btn-container .radio-name-online {
+  left: -2px;
+}
+.wrapper .header .radio-btn-container .radio-name-all {
+  left: 48px;
+}
+.wrapper .header .radio-btn-container .radio-name-offline {
+  left: 98px;
+}
+.wrapper .header .radio-btn-container .radio-toggle-circle {
+  position: absolute;
+  top: -1px;
+  z-index: 3;
+  width: 48px;
+  height: 18px;
+  background-color: LightSlateGray;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .header hr {
+  width: 100%;
+  height: 1px;
+  margin: 25px 0px 15px 0px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.wrapper .results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 95vw;
+}
+.wrapper .results .result-item {
+  display: flex;
+  flex-basis: 49.5%;
+  margin-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  color: #333;
+  text-decoration: none;
+}
+.wrapper .results .result-item .result-img-frame {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-basis: 100px;
+  height: 100px;
+  background-color: white;
+  text-align: center;
+}
+.wrapper .results .result-item .result-img-frame i {
+  color: #666;
+  font-size: 3em;
+  margin: auto;
+}
+.wrapper .results .result-item .result-img-frame img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .results .result-item .result-info {
+  width: calc(100% - 115px);
+  margin: 0 15px;
+}
+.wrapper .results .result-item .result-info h5 {
+  line-height: 0em;
+}
+.wrapper .results .result-item .result-info p {
+  line-height: 1.3em;
+}
+.wrapper .results .offline {
+  background-color: Firebrick;
+  border-color: Firebrick;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .results .offline:hover {
+  background-color: IndianRed;
+  border-color: IndianRed;
+}
+.wrapper .results .invalid {
+  background-color: DimGray;
+  border-color: DimGray;
+  color: #FAFAFA;
+  opacity: 0.5;
+}
+.wrapper .results .online {
+  background-color: SeaGreen;
+  border-color: SeaGreen;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .results .online:hover {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+}
+
+.mdl-mini-footer {
+  position: relative;
+  flex-grow: 1;
+}
+.mdl-mini-footer .mdl-logo {
+  background-color: #424242;
+  color: #CCC;
+  font-size: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-mini-footer .mdl-logo .footer-link {
+  color: #CCC;
+}
+.mdl-mini-footer .resources-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.mdl-mini-footer .resources-container #resources-toggle {
+  display: none;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-backdrop {
+  position: fixed;
+  visibility: visible;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2 ease-in;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+  position: fixed;
+  visibility: visible;
+  width: 50vw;
+  height: 50vh;
+  left: 50%;
+  top: 10vh;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  opacity: 1;
+  padding: 10px 30px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: auto;
+  box-shadow: 0 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+.mdl-mini-footer .resources-container .resources-btn {
+  display: block;
+  margin: 0;
+  color: #CCC;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content,
+.mdl-mini-footer .resources-container .resources-backdrop {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+.mdl-mini-footer .resources-container .resources-content {
+  position: relative;
+  color: black;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close:hover {
+  color: #C33;
+}
+
+@media (max-width: 760px) {
+  .wrapper {
+    min-height: calc(80vh - 50px);
+  }
+  .wrapper .results {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .wrapper .results .result-item {
+    flex-basis: auto;
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper .header h2 {
+    font-size: 2.5em;
+    line-height: 0.8em;
+  }
+  .wrapper .results .result-item {
+    width: 100%;
+  }
+  .wrapper .results .result-item .result-img-frame {
+    flex-basis: 75px;
+    height: 75px;
+  }
+  .wrapper .results .result-item .result-info h5 {
+    font-size: 1em;
+  }
+  .wrapper .results .result-item .result-info p {
+    font-size: 0.75em;
+    line-height: 1em;
+  }
+
+  .mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+    width: calc(80vw - 20px);
+  }
+}

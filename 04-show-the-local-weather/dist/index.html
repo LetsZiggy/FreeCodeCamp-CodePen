@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Show the Local Weather</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Show the Local Weather</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="initial">
+  <div class="spinner spinner-5"><span></span><span></span><span></span></div>
+</div>
+<div class="wrapper hidden">
+  <div id="location"></div>
+  <div id="temperature"></div>
+  <div class="sub">
+    <div id="moon"></div>
+    <div id="weather"></div>
+  </div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nbsp;for&nbsp;<a class="footer-link" href="https://www.freecodecamp.com/challenges/show-the-local-weather" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+        <li><a href="https://codepen.io/devtips/pen/akRyZO" target="_blank">Spinners, Loaders, and Jazz</a></li>
+        <li><a href="https://cors-anywhere.herokuapp.com/" target="_blank">Heroku CORS Anywhere</a></li>
+        <li><a href="https://ipinfo.io/" target="_blank">ipinfo.io API</a></li>
+        <li><a href="http://openweathermap.org/api" target="_blank">OpenWeatherMap API</a></li>
+        <li><a href="https://fcc-weather-api.glitch.me/" target="_blank">FreeCodeCamp Weather API Pass-through</a></li>
+        <li><a href="http://aa.usno.navy.mil/data/docs/api.php" target="_blank">USNO Moon API</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

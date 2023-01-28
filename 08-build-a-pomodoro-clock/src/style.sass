@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700')
+
+.hidden
+  display: none
+
+body
+  position         : relative
+  display          : flex
+  flex-direction   : row
+  flex-wrap        : wrap
+  align-items      : stretch
+  background-color : #FAFAFA
+  color            : #333
+
+.wrapper
+  display         : flex
+  flex-direction  : column
+  justify-content : center
+  align-items     : center
+  align-content   : center
+  width           : 100%
+  min-height      : 80vh
+  font-family     : 'Open Sans Condensed', sans-serif
+
+  #adjuster
+    display         : flex
+    flex-direction  : row
+    justify-content : space-around
+    align-items     : center
+    align-content   : center
+    flex-wrap       : wrap
+    width           : 50%
+
+    .instruction
+      width           : 100%
+      height          : auto
+      text-align      : center
+      text-decoration : underline
+      font-weight     : bolder
+      color           : #bcbcbc
+      font-family     : 'Open Sans Condensed', sans-serif
+      user-select     : none
+
+    .draggables
+      display         : flex
+      flex-direction  : row
+      justify-content : center
+      align-items     : center
+      align-content   : center
+      width           : 100%
+      height          : auto
+      margin          : 0rem 0rem 5rem 0rem
+      cursor          : pointer
+
+      .drag:hover, .drag:active, .drag:active
+        span
+          background-color : #343434
+        
+        .title
+          color : #343434
+
+      .drag
+        position        : relative
+        display         : inline-flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        width           : 7.5rem
+        height          : 7.5rem
+        margin          : 0rem 1rem
+        border          : 1px solid #bcbcbc
+        border-radius   : 50%
+        overflow        : hidden
+        user-select     : none
+
+        span
+          position         : absolute
+          display          : inline-flex
+          justify-content  : center
+          align-items      : center
+          align-content    : center
+          width            : 100%
+          height           : 2rem
+          font-size        : 1.5rem
+          font-weight      : bolder
+          color            : white
+          background-color : #bcbcbc
+
+        span:first-child
+          left : 0rem
+          top  : 0rem
+
+        span:not(:first-child)
+          left   : 0rem
+          bottom : 0rem
+
+        .title
+          position        : absolute
+          width           : 100%
+          height          : auto
+          left            : 0rem
+          top             : 2rem
+          text-align      : center
+          text-decoration : underline
+          font-size       : 0.90rem
+          color           : #9a9a9a
+
+        .amount
+          display         : inline-flex
+          flex-direction  : column
+          justify-content : center
+          align-items     : center
+          align-content   : center
+          width           : 100%
+          height          : 100%
+          text-align      : center
+          font-size       : 1.5rem
+          font-weight     : bolder
+          user-select     : none
+          padding-top     : 1.1rem
+
+    .start:active
+      .material-icons
+        color            : #fafafa
+        background-color : gold
+
+    .start:hover:not(:active)
+      .material-icons
+        color : gold
+
+    .start
+      position         : relative
+      display          : flex
+      flex-direction   : column
+      justify-content  : space-between
+      align-items      : center
+      align-content    : center
+      width            : auto
+      height           : auto
+      cursor           : pointer
+
+      .material-icons
+        display          : inline-block
+        border-radius    : 5px
+        box-sizing       : border-box
+        margin           : 1rem
+        padding          : 0.5rem 1rem
+        background-color : lightseagreen
+        font-size        : 2.5rem
+        font-weight      : bolder
+        color            : #fafafa
+        user-select      : none
+
+  #timer
+    display         : flex
+    flex-direction  : column
+    justify-content : center
+    align-items     : center
+    align-content   : center
+
+    .clock
+      position : relative
+      margin   : 1.5rem
+
+      span
+        font-size   : 3rem
+        user-select : none
+
+      .between
+        margin : 0.5rem
+
+      #repeat, #minute, #second
+        font-weight : bolder
+        margin-left : 0.5rem
+
+      .repeat, .minute, .second
+        margin-right : 0.5rem
+
+      #type
+        text-transform  : uppercase
+        text-decoration : underline
+        font-weight     : bolder
+        color           : lightseagreen
+
+      #type.gold
+        color : gold !important
+
+    .controller
+      margin : 1.5rem
+
+      .material-icons
+        font-size   : 2.5rem
+        padding     : 0rem 0.75rem
+        margin      : 0rem 0.75rem
+        color       : #bcbcbc
+        cursor      : pointer
+        user-select : none
+
+      .material-icons:hover
+        color : #343434
+
+      #radio-stop:checked ~ #stop-label
+        #stop
+          color : crimson
+
+      #radio-pause:checked ~ #pause-label
+        #pause
+          color : gold
+
+      #radio-play:checked ~ #play-label
+        #play
+          color : lightseagreen
+
+.mdl-mini-footer
+  position  : relative
+  flex-grow : 1
+
+  .mdl-logo
+    background-color : #424242
+    color            : #CCC
+    font-size        : 0.8em
+    margin-left      : auto
+    margin-right     : auto
+  
+    .footer-link
+      color : #CCC
+
+  .resources-container
+    position : absolute
+    right    : 5px
+    top      : 5px
+
+    #resources-toggle
+      display : none
+
+      &:checked ~ .resources-backdrop
+        position         : fixed
+        visibility       : visible
+        width            : 100vw
+        height           : 100vh
+        left             : 0
+        top              : 0
+        z-index          : 9
+        opacity          : 1
+        background-color : rgba(0, 0, 0, 0.6)
+        transition       : opacity 0.2 ease-in
+
+      &:checked ~ .resources-content
+        position         : fixed
+        visibility       : visible
+        width            : 50vw
+        height           : 50vh
+        left             : 50%
+        top              : 10vh
+        transform        : translateX(-50%)
+        background-color : #FFF
+        opacity          : 1
+        padding          : 10px 30px
+        z-index          : 999
+        pointer-events   : auto
+        cursor           : auto
+        box-shadow       : 0 0px 0px 6px rgba(0, 0, 0, 0.6)
+
+    .resources-btn
+      display         : block
+      margin          : 0
+      color           : #CCC
+      font-size       : 0.8em
+      font-weight     : bold
+      text-decoration : underline
+      cursor          : pointer
+
+    .resources-content,
+    .resources-backdrop
+      width      : 0
+      height     : 0
+      opacity    : 0
+      visibility : hidden
+      overflow   : hidden
+      cursor     : pointer
+      transition : opacity 0.2s ease-in
+
+    .resources-content
+      position : relative
+      color    : black
+
+      .resources-close
+        position    : absolute
+        right       : 5px
+        top         : 5px
+        padding     : 5px
+        color       : #333
+        font-weight : bold
+        text-align  : center
+        cursor      : pointer
+
+        &:hover
+          color : #C33
+
+@media (max-width: 760px)
+  .wrapper
+    min-height : calc(80vh - 50px)
+
+    #adjuster
+      width : 100%
+
+    #timer
+      .clock
+        span
+          font-size : 2.5rem
+
+@media (max-width: 480px)
+  .wrapper
+    #adjuster
+      .draggables
+        .drag
+          width  : 6.5rem
+          height : 6.5rem
+
+          span
+            height : 1.75rem
+          
+          .title
+            font-size : 0.85rem
+          
+          .amount
+            font-size : 1.25rem
+
+    #timer
+      .clock
+        span
+          font-size : 1.85rem
+
+  .mdl-mini-footer
+    .resources-container
+      #resources-toggle
+        &:checked ~ .resources-content
+          width : calc(80vw - 20px)

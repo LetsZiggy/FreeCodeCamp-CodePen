@@ -1,0 +1,71 @@
+.wrapper
+  audio#audio-red.hidden(src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mp3")
+  audio#audio-blue.hidden(src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mp3")
+  audio#audio-green.hidden(src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mp3")
+  audio#audio-yellow.hidden(src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mp3")
+  audio#audio-wrong.hidden(src="https://www.soundjay.com/button/beep-02.mp3" type="audio/mp3")
+
+  input#normal.hidden(type="radio" name="difficulty" checked)
+  input#strict.hidden(type="radio" name="difficulty")
+  input#insane.hidden(type="radio" name="difficulty")
+
+  input#start-checkbox(type="checkbox" onchange="startGame(event)")
+
+  #simon
+    #board
+      #red(onclick="handleClick(1)")
+      #blue(onclick="handleClick(2)")
+      #green(onclick="handleClick(3)")
+      #yellow(onclick="handleClick(4)")
+      #cover
+
+    #timers
+      - for (i = 1; i <= 60; i++)
+        div.next(id="timer-" + i)
+
+    #scores
+      - for (i = 1; i <= 20; i++)
+        div(id="score-" + i)
+
+    #menu
+      label#start(for="start-checkbox")
+        span Start
+        i.material-icons toll
+        i.material-icons fiber_smart_record
+
+      #difficulty
+        #labels
+          label#label-normal(for="normal" onclick="setDifficulty('normal')") Normal
+          label#label-strict(for="strict" onclick="setDifficulty('strict')") Strict
+          label#label-insane(for="insane" onclick="setDifficulty('insane')") Insane
+        i.material-icons(onclick="setDifficulty('loop')") loupe
+
+  #congratulation(onclick="reset()")
+    | You've completed this&nbsp;
+    span Simon
+    | &nbsp;game on&nbsp;
+    span Normal
+
+  #info On insane difficulty, you may use keyboard to trigger the colours. &nbsp;&nbsp;&nbsp; Red : 1 | Blue : 2 | Green : 3 | Yellow : 4
+
+footer.mdl-mini-footer
+  .mdl-logo
+    | Written by&nbsp;
+    a.footer-link(href="https://www.freecodecamp.org/letsziggy" target="_blank") LetsZiggy
+    | &nbsp;for&nbsp;
+    a.footer-link(href='https://www.freecodecamp.org/challenges/build-a-simon-game', target='_blank') FreeCodeCamp Challenge
+    | .
+
+  .resources-container
+    input#resources-toggle(type="checkbox")
+    label.resources-btn(for="resources-toggle") Resources
+    label.resources-backdrop(for="resources-toggle")
+    .resources-content
+      label.resources-close(for="resources-toggle") &#x2715;
+      h5 Resources
+      hr
+      ul
+        li
+          a(href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank") Pure CSS Modal Box On Button Click
+        li
+          a(href="https://www.soundjay.com/" target="_blank") SoundJay

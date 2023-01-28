@@ -1,0 +1,772 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+.hidden {
+  display: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #FAFAFA;
+  color: #333;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  min-height: 80vh;
+  font-family: "Open Sans Condensed", sans-serif;
+  overflow: hidden;
+}
+.wrapper #normal:checked ~ #simon #menu #difficulty .material-icons {
+  transform: translateY(-0.5rem) rotate(-215deg);
+}
+.wrapper #strict:checked ~ #simon #menu #difficulty .material-icons {
+  transform: translateY(-0.5rem) rotate(-135deg);
+}
+.wrapper #insane:checked ~ #simon #menu #difficulty .material-icons {
+  transform: translateY(-0.5rem) rotate(-55deg);
+}
+.wrapper #insane:checked ~ #info {
+  bottom: 0.5rem;
+}
+.wrapper #start-checkbox {
+  display: none;
+}
+.wrapper #start-checkbox:checked ~ #simon #menu #start .material-icons:nth-child(2) {
+  display: none;
+}
+.wrapper #start-checkbox:checked ~ #simon #menu #start .material-icons:nth-child(3) {
+  display: block;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #red, .wrapper #start-checkbox:checked ~ #simon #board #blue, .wrapper #start-checkbox:checked ~ #simon #board #green, .wrapper #start-checkbox:checked ~ #simon #board #yellow {
+  cursor: pointer;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #red:hover {
+  background-color: #ee3333;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #red:hover:active {
+  background-color: #ff3333;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #blue:hover {
+  background-color: #3333ee;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #blue:hover:active {
+  background-color: #3333ff;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #green:hover {
+  background-color: #33ee33;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #green:hover:active {
+  background-color: #33ff33;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #yellow:hover {
+  background-color: #eeee33;
+}
+.wrapper #start-checkbox:checked ~ #simon #board #yellow:hover:active {
+  background-color: #ffff33;
+}
+.wrapper #simon {
+  position: relative;
+  display: block;
+  overflow: none;
+  width: 70vh;
+  height: 70vh;
+  transform: translateY(-1vh);
+  overflow: hidden;
+}
+.wrapper #simon #board {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid gainsboro;
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wrapper #simon #board div {
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #simon #board #red {
+  left: 0rem;
+  top: 0rem;
+  transform-origin: 100% 100%;
+  border-right: 3px solid gainsboro;
+  background-color: #bb0000;
+}
+.wrapper #simon #board #red.highlight {
+  background-color: #ee3333;
+}
+.wrapper #simon #board #blue {
+  right: 0rem;
+  top: 0rem;
+  transform-origin: 0% 100%;
+  border-bottom: 3px solid gainsboro;
+  background-color: #0000bb;
+}
+.wrapper #simon #board #blue.highlight {
+  background-color: #3333ee;
+}
+.wrapper #simon #board #green {
+  left: 0rem;
+  bottom: 0rem;
+  transform-origin: 100% 0%;
+  border-top: 3px solid gainsboro;
+  background-color: #00bb00;
+}
+.wrapper #simon #board #green.highlight {
+  background-color: #33ee33;
+}
+.wrapper #simon #board #yellow {
+  right: 0rem;
+  bottom: 0rem;
+  transform-origin: 0% 0%;
+  border-left: 3px solid gainsboro;
+  background-color: #bbbb00;
+}
+.wrapper #simon #board #yellow.highlight {
+  background-color: #eeee33;
+}
+.wrapper #simon #board #cover {
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  z-index: 10;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: default;
+}
+.wrapper #simon #timers {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 55%;
+  height: 55%;
+  border: 3px solid gainsboro;
+  border-radius: 50%;
+  background-color: grey;
+  box-sizing: border-box;
+  overflow: hidden;
+  pointer-events: none;
+}
+.wrapper #simon #timers div.next {
+  background-color: rgba(0, 0, 0, 0);
+}
+.wrapper #simon #timers div {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  display: block;
+  width: 6%;
+  height: 100%;
+  box-sizing: border-box;
+  transform-origin: 0% 100%;
+  background-color: tomato;
+  pointer-events: none;
+}
+.wrapper #simon #timers #timer-1 {
+  transform: rotate(0deg);
+}
+.wrapper #simon #timers #timer-2 {
+  transform: rotate(6deg);
+}
+.wrapper #simon #timers #timer-3 {
+  transform: rotate(12deg);
+}
+.wrapper #simon #timers #timer-4 {
+  transform: rotate(18deg);
+}
+.wrapper #simon #timers #timer-5 {
+  transform: rotate(24deg);
+}
+.wrapper #simon #timers #timer-6 {
+  transform: rotate(30deg);
+}
+.wrapper #simon #timers #timer-7 {
+  transform: rotate(36deg);
+}
+.wrapper #simon #timers #timer-8 {
+  transform: rotate(42deg);
+}
+.wrapper #simon #timers #timer-9 {
+  transform: rotate(48deg);
+}
+.wrapper #simon #timers #timer-10 {
+  transform: rotate(54deg);
+}
+.wrapper #simon #timers #timer-11 {
+  transform: rotate(60deg);
+}
+.wrapper #simon #timers #timer-12 {
+  transform: rotate(66deg);
+}
+.wrapper #simon #timers #timer-13 {
+  transform: rotate(72deg);
+}
+.wrapper #simon #timers #timer-14 {
+  transform: rotate(78deg);
+}
+.wrapper #simon #timers #timer-15 {
+  transform: rotate(84deg);
+}
+.wrapper #simon #timers #timer-16 {
+  transform: rotate(90deg);
+}
+.wrapper #simon #timers #timer-17 {
+  transform: rotate(96deg);
+}
+.wrapper #simon #timers #timer-18 {
+  transform: rotate(102deg);
+}
+.wrapper #simon #timers #timer-19 {
+  transform: rotate(108deg);
+}
+.wrapper #simon #timers #timer-20 {
+  transform: rotate(114deg);
+}
+.wrapper #simon #timers #timer-21 {
+  transform: rotate(120deg);
+}
+.wrapper #simon #timers #timer-22 {
+  transform: rotate(126deg);
+}
+.wrapper #simon #timers #timer-23 {
+  transform: rotate(132deg);
+}
+.wrapper #simon #timers #timer-24 {
+  transform: rotate(138deg);
+}
+.wrapper #simon #timers #timer-25 {
+  transform: rotate(144deg);
+}
+.wrapper #simon #timers #timer-26 {
+  transform: rotate(150deg);
+}
+.wrapper #simon #timers #timer-27 {
+  transform: rotate(156deg);
+}
+.wrapper #simon #timers #timer-28 {
+  transform: rotate(162deg);
+}
+.wrapper #simon #timers #timer-29 {
+  transform: rotate(168deg);
+}
+.wrapper #simon #timers #timer-30 {
+  transform: rotate(174deg);
+}
+.wrapper #simon #timers #timer-31 {
+  transform: rotate(180deg);
+}
+.wrapper #simon #timers #timer-32 {
+  transform: rotate(186deg);
+}
+.wrapper #simon #timers #timer-33 {
+  transform: rotate(192deg);
+}
+.wrapper #simon #timers #timer-34 {
+  transform: rotate(198deg);
+}
+.wrapper #simon #timers #timer-35 {
+  transform: rotate(204deg);
+}
+.wrapper #simon #timers #timer-36 {
+  transform: rotate(210deg);
+}
+.wrapper #simon #timers #timer-37 {
+  transform: rotate(216deg);
+}
+.wrapper #simon #timers #timer-38 {
+  transform: rotate(222deg);
+}
+.wrapper #simon #timers #timer-39 {
+  transform: rotate(228deg);
+}
+.wrapper #simon #timers #timer-40 {
+  transform: rotate(234deg);
+}
+.wrapper #simon #timers #timer-41 {
+  transform: rotate(240deg);
+}
+.wrapper #simon #timers #timer-42 {
+  transform: rotate(246deg);
+}
+.wrapper #simon #timers #timer-43 {
+  transform: rotate(252deg);
+}
+.wrapper #simon #timers #timer-44 {
+  transform: rotate(258deg);
+}
+.wrapper #simon #timers #timer-45 {
+  transform: rotate(264deg);
+}
+.wrapper #simon #timers #timer-46 {
+  transform: rotate(270deg);
+}
+.wrapper #simon #timers #timer-47 {
+  transform: rotate(276deg);
+}
+.wrapper #simon #timers #timer-48 {
+  transform: rotate(282deg);
+}
+.wrapper #simon #timers #timer-49 {
+  transform: rotate(288deg);
+}
+.wrapper #simon #timers #timer-50 {
+  transform: rotate(294deg);
+}
+.wrapper #simon #timers #timer-51 {
+  transform: rotate(300deg);
+}
+.wrapper #simon #timers #timer-52 {
+  transform: rotate(306deg);
+}
+.wrapper #simon #timers #timer-53 {
+  transform: rotate(312deg);
+}
+.wrapper #simon #timers #timer-54 {
+  transform: rotate(318deg);
+}
+.wrapper #simon #timers #timer-55 {
+  transform: rotate(324deg);
+}
+.wrapper #simon #timers #timer-56 {
+  transform: rotate(330deg);
+}
+.wrapper #simon #timers #timer-57 {
+  transform: rotate(336deg);
+}
+.wrapper #simon #timers #timer-58 {
+  transform: rotate(342deg);
+}
+.wrapper #simon #timers #timer-59 {
+  transform: rotate(348deg);
+}
+.wrapper #simon #timers #timer-60 {
+  transform: rotate(354deg);
+}
+.wrapper #simon #scores {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  overflow: hidden;
+  pointer-events: none;
+}
+.wrapper #simon #scores div.next {
+  background-color: lime;
+}
+.wrapper #simon #scores div {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  display: block;
+  width: 18%;
+  height: 100%;
+  box-sizing: border-box;
+  transform-origin: 0% 100%;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+}
+.wrapper #simon #scores #score-1 {
+  transform: rotate(0deg);
+}
+.wrapper #simon #scores #score-2 {
+  transform: rotate(18deg);
+}
+.wrapper #simon #scores #score-3 {
+  transform: rotate(36deg);
+}
+.wrapper #simon #scores #score-4 {
+  transform: rotate(54deg);
+}
+.wrapper #simon #scores #score-5 {
+  transform: rotate(72deg);
+}
+.wrapper #simon #scores #score-6 {
+  transform: rotate(90deg);
+}
+.wrapper #simon #scores #score-7 {
+  transform: rotate(108deg);
+}
+.wrapper #simon #scores #score-8 {
+  transform: rotate(126deg);
+}
+.wrapper #simon #scores #score-9 {
+  transform: rotate(144deg);
+}
+.wrapper #simon #scores #score-10 {
+  transform: rotate(162deg);
+}
+.wrapper #simon #scores #score-11 {
+  transform: rotate(180deg);
+}
+.wrapper #simon #scores #score-12 {
+  transform: rotate(198deg);
+}
+.wrapper #simon #scores #score-13 {
+  transform: rotate(216deg);
+}
+.wrapper #simon #scores #score-14 {
+  transform: rotate(234deg);
+}
+.wrapper #simon #scores #score-15 {
+  transform: rotate(252deg);
+}
+.wrapper #simon #scores #score-16 {
+  transform: rotate(270deg);
+}
+.wrapper #simon #scores #score-17 {
+  transform: rotate(288deg);
+}
+.wrapper #simon #scores #score-18 {
+  transform: rotate(306deg);
+}
+.wrapper #simon #scores #score-19 {
+  transform: rotate(324deg);
+}
+.wrapper #simon #scores #score-20 {
+  transform: rotate(342deg);
+}
+.wrapper #simon #menu {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 45%;
+  height: 45%;
+  border: 3px solid gainsboro;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+.wrapper #simon #menu #start {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 40%;
+  height: 30%;
+  margin: 1rem 0rem;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #simon #menu #start span:hover {
+  color: crimson;
+}
+.wrapper #simon #menu #start span {
+  color: darkgrey;
+  padding: 0.25rem;
+  transform: translateY(0.5rem);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wrapper #simon #menu #start .material-icons:hover {
+  color: crimson;
+}
+.wrapper #simon #menu #start .material-icons {
+  transform: translateY(-0.25rem) rotate(180deg);
+  color: dimgrey;
+  padding: 0.25rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.wrapper #simon #menu #start .material-icons:nth-child(2) {
+  display: block;
+}
+.wrapper #simon #menu #start .material-icons:nth-child(3) {
+  display: none;
+}
+.wrapper #simon #menu #difficulty {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 75%;
+  height: 30%;
+  margin: 1rem 0rem;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #simon #menu #difficulty #labels {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+.wrapper #simon #menu #difficulty #labels label:hover {
+  color: crimson;
+}
+.wrapper #simon #menu #difficulty #labels label {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.125rem;
+  color: darkgrey;
+  cursor: pointer;
+}
+.wrapper #simon #menu #difficulty #labels #label-normal {
+  transform: translateY(1rem);
+  width: 33.3%;
+}
+.wrapper #simon #menu #difficulty #labels #label-strict {
+  transform: translateY(-0.65rem);
+  width: 33.4%;
+}
+.wrapper #simon #menu #difficulty #labels #label-insane {
+  transform: translateY(1rem);
+  width: 33.3%;
+}
+.wrapper #simon #menu #difficulty .material-icons:hover {
+  color: crimson;
+}
+.wrapper #simon #menu #difficulty .material-icons {
+  color: dimgrey;
+  padding: 0.125rem;
+  cursor: pointer;
+}
+.wrapper #congratulation:hover:active {
+  color: #fafafa;
+  background-color: darkred;
+  border: 1px solid whitesmoke;
+}
+.wrapper #congratulation:hover:active span {
+  color: #fafafa;
+}
+.wrapper #congratulation:hover {
+  color: #fafafa;
+  background-color: firebrick;
+  border: 1px solid whitesmoke;
+}
+.wrapper #congratulation:hover span {
+  color: #fafafa;
+}
+.wrapper #congratulation {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: none;
+  width: 17.5rem;
+  height: 17.5rem;
+  padding: 7.5rem 1rem;
+  transform: translate(-50%, -52.5%);
+  border: 1px solid firebrick;
+  border-radius: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #333;
+  background-color: whitesmoke;
+  box-shadow: 0rem 1rem 1rem -0.75rem #333;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.wrapper #congratulation span {
+  color: firebrick;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-decoration: underline;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #info {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5rem;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: darkgrey;
+  transition: bottom 0.5s ease;
+}
+
+.mdl-mini-footer {
+  position: relative;
+  flex-grow: 1;
+}
+.mdl-mini-footer .mdl-logo {
+  background-color: #424242;
+  color: #CCC;
+  font-size: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-mini-footer .mdl-logo .footer-link {
+  color: #CCC;
+}
+.mdl-mini-footer .resources-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.mdl-mini-footer .resources-container #resources-toggle {
+  display: none;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-backdrop {
+  position: fixed;
+  visibility: visible;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2 ease-in;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+  position: fixed;
+  visibility: visible;
+  width: 50vw;
+  height: 50vh;
+  left: 50%;
+  top: 10vh;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  opacity: 1;
+  padding: 10px 30px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: auto;
+  box-shadow: 0 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+.mdl-mini-footer .resources-container .resources-btn {
+  display: block;
+  margin: 0;
+  color: #CCC;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content,
+.mdl-mini-footer .resources-container .resources-backdrop {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+.mdl-mini-footer .resources-container .resources-content {
+  position: relative;
+  color: black;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close:hover {
+  color: #C33;
+}
+
+@media (max-width: 760px) {
+  .wrapper {
+    min-height: calc(80vh - 50px);
+  }
+  .wrapper #normal:checked ~ #simon #menu #difficulty .material-icons {
+    transform: translateY(-0.25rem) rotate(-215deg);
+  }
+  .wrapper #strict:checked ~ #simon #menu #difficulty .material-icons {
+    transform: translateY(-0.25rem) rotate(-135deg);
+  }
+  .wrapper #insane:checked ~ #simon #menu #difficulty .material-icons {
+    transform: translateY(-0.25rem) rotate(-55deg);
+  }
+  .wrapper #insane:checked ~ #info {
+    bottom: 1.25rem;
+  }
+  .wrapper #simon {
+    width: 50vh;
+    height: 50vh;
+  }
+  .wrapper #simon #menu #difficulty #labels label {
+    font-size: 0.85rem;
+  }
+  .wrapper #simon #menu #difficulty #labels #label-normal {
+    transform: translate(-0.5rem, 0.5rem);
+    width: 33.3%;
+  }
+  .wrapper #simon #menu #difficulty #labels #label-strict {
+    transform: translateY(-0.65rem);
+    width: 33.4%;
+  }
+  .wrapper #simon #menu #difficulty #labels #label-insane {
+    transform: translate(0.5rem, 0.5rem);
+    width: 33.3%;
+  }
+}
+@media (max-width: 480px) {
+  .mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+    width: calc(80vw - 20px);
+  }
+}

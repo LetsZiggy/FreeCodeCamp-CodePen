@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Build a Tic Tac Toe Game</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Build a Tic Tac Toe Game</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper"><img class="title" src="https://image.flaticon.com/icons/svg/434/434900.svg" alt="Icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY" title="Icon made by Freepik from www.flaticon.com is licensed by CC 3.0 BY"/>
+  <div class="info">The starting player is randomised!</div>
+  <div id="menu">
+    <div class="interactive">
+      <div id="play-mode">
+        <div class="mode-title">Mode Select:</div>
+        <div class="mode"><span class="button" onclick="menuSelect(1, 'single')">Single Player</span><span class="separator">|</span><span class="button" onclick="menuSelect(1, 'versus')">Versus</span></div>
+      </div>
+      <div id="icon-pick-one">
+        <div class="icon-title">Player One's icon:</div>
+        <div class="icon"><i class="material-icons" onclick="menuSelect(2, 'camera')">camera</i><i class="material-icons" onclick="menuSelect(2, 'all_out')">all_out</i><i class="material-icons" onclick="menuSelect(2, 'grade')">grade</i><i class="material-icons" onclick="menuSelect(2, 'change_history')">change_history</i></div>
+      </div>
+      <div id="icon-pick-two">
+        <div class="icon-title">Player Two's icon:</div>
+        <div class="icon"><i class="material-icons" onclick="menuSelect(3, 'camera_alt')">camera_alt</i><i class="material-icons" onclick="menuSelect(3, 'blur_circular')">blur_circular</i><i class="material-icons" onclick="menuSelect(3, 'brightness_7')">brightness_7</i><i class="material-icons" onclick="menuSelect(3, 'details')">details</i></div>
+      </div>
+    </div>
+    <div class="go-back" id="reset" onclick="menuSelect('reset', null)">Reset</div>
+  </div>
+  <div id="game">
+    <div id="spinner">
+      <div class="spinner"><span></span><span></span><span></span></div>
+    </div>
+    <div class="turn"><span>Turn:</span><i class="material-icons" id="turn-icon">stop</i></div>
+    <div id="win-message" onclick="menuSelect('restart', null)">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="board">
+      <div id="board-0" onclick="gameClick(event, 0)"></div>
+      <div id="board-1" onclick="gameClick(event, 1)"></div>
+      <div id="board-2" onclick="gameClick(event, 2)"></div>
+      <div id="board-3" onclick="gameClick(event, 3)"></div>
+      <div id="board-4" onclick="gameClick(event, 4)"></div>
+      <div id="board-5" onclick="gameClick(event, 5)"></div>
+      <div id="board-6" onclick="gameClick(event, 6)"></div>
+      <div id="board-7" onclick="gameClick(event, 7)"></div>
+      <div id="board-8" onclick="gameClick(event, 8)"></div>
+    </div>
+    <div class="go-back" id="exit" onclick="menuSelect('exit', null)">Exit</div>
+  </div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nbsp;for&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/challenges/build-a-tic-tac-toe-game" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+        <li><a href="https://codepen.io/devtips/pen/akRyZO" target="_blank">Spinners, Loaders, and Jazz</a></li>
+        <li><a href="https://www.flaticon.com/free-icon/tic-tac-toe_434900#term=tic tac toe&amp;page=1&amp;position=26" target="_blank">Icon made by Freepik from www.flaticon.com (CC 3.0 BY)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=P2TcQ3h0ipQ" target="_blank">JavaScript Tic Tac Toe Project Tutorial - Unbeatable AI w/ Minimax Algorithm</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

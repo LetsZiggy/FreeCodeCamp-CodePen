@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Build a JavaScript Calculator</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Build a JavaScript Calculator</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="calculator">
+    <div class="memories">
+      <div class="button forget" onmousedown="handleMouseDown('MC')" title="Clear Memory | Keyboard: 'i'">MC</div>
+      <div class="button memorysubtract" onmousedown="handleMouseDown('M-')" title="Subtract output from Memory | Keyboard: 'o'">M-</div>
+      <div class="button memoryadd" onmousedown="handleMouseDown('M+')" title="Add output to Memory | Keyboard: 'p'">M+</div>
+      <div class="button remember" onmousedown="handleMouseDown('MS')" title="Store output to Memory | Keyboard: '['">MS</div>
+      <select class="memory-list" id="select" title="Keyboard: 'a' or 'b' or 'c' or 'd' or 'e'">
+        <option value="0" label="No Memory Selected" selected="selected"></option>
+        <option value="0" label="A = 0"></option>
+        <option value="0" label="B = 0"></option>
+        <option value="0" label="C = 0"></option>
+        <option value="0" label="D = 0"></option>
+        <option value="0" label="E = 0"></option>
+      </select>
+      <div class="button use" onmousedown="handleMouseDown('MR')" title="Apply Memory | Keyboard: ']'">MR</div>
+    </div>
+    <div class="separator"></div>
+    <div class="numpad">
+      <div class="button divide" onmousedown="handleMouseDown('/')" title="Keyboard: '/' or '\'">/</div>
+      <div class="button multiply" onmousedown="handleMouseDown('*')" title="Keyboard: '*'">*</div>
+      <div class="button subtract" onmousedown="handleMouseDown('-')" title="Keyboard: '-'">-</div>
+      <div class="button add" onmousedown="handleMouseDown('+')" title="Keyboard: '+'">+</div>
+      <div class="button nine" onmousedown="handleMouseDown(9)" title="Keyboard: '9'">9</div>
+      <div class="button eight" onmousedown="handleMouseDown(8)" title="Keyboard: '8'">8</div>
+      <div class="button seven" onmousedown="handleMouseDown(7)" title="Keyboard: '7'">7</div>
+      <div class="button six" onmousedown="handleMouseDown(6)" title="Keyboard: '6'">6</div>
+      <div class="button five" onmousedown="handleMouseDown(5)" title="Keyboard: '5'">5</div>
+      <div class="button four" onmousedown="handleMouseDown(4)" title="Keyboard: '4'">4</div>
+      <div class="button three" onmousedown="handleMouseDown(3)" title="Keyboard: '3'">3</div>
+      <div class="button two" onmousedown="handleMouseDown(2)" title="Keyboard: '2'">2</div>
+      <div class="button one" onmousedown="handleMouseDown(1)" title="Keyboard: '1'">1</div>
+      <div class="button zero" onmousedown="handleMouseDown(0)" title="Keyboard: '0'">0</div>
+      <div class="button dot" onmousedown="handleMouseDown('.')" title="Keyboard: '.'">.</div>
+      <div class="button clear" onmousedown="handleMouseDown('Clear')" title="Keyboard: 'Backspace' or 'Delete'">Clear</div>
+      <div class="button equals" onmousedown="handleMouseDown('=')" title="Keyboard: 'Enter' or '='">=</div>
+    </div>
+  </div>
+  <div class="display">
+    <div class="user-input"><span id="user-input"></span><span class="blinking" id="blinking">_</span>
+      <div><span>User Input</span><span>&lt; keyboard input possible / mouse over to see the key(s) &gt;</span></div>
+    </div>
+    <div class="separator"></div>
+    <div class="output"><span id="user-output"></span><span>Output</span></div>
+  </div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nsbp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nsbp;for&nsbp;<a class="footer-link" href="https://www.freecodecamp.org/challenges/build-a-javascript-calculator" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+        <li><a href="http://www.jacklmoore.com/notes/rounding-in-javascript/">A more accurate way to round with decimals in JavaScript</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

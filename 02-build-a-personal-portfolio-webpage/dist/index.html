@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Build a Personal Portfolio Webpage</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Build a Personal Portfolio Webpage</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--2-offset-desktop mdl-cell--6-col-tablet mdl-cell--1-offset-tablet mdl-cell--4-col-phone mdl-tabs mdl-js-tabs mdl-js-ripple-effect mdl-shadow--4dp">
+    <div class="mdl-tabs__tab-bar"><a class="mdl-tabs__tab is-active" href="#about">About.Me</a><a class="mdl-tabs__tab" href="#portfolio">My.Portfolio</a><a class="mdl-tabs__tab" href="#contact">Contact.Me</a></div>
+    <div class="mdl-tabs__panel is-active" id="about">
+      <div class="well"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Go_gopher_app_engine_color.jpg" alt="Golang Gopher Logo"/><span class="about-img-caption">Image by&nbsp;<a class="about-link" href="http://reneefrench.blogspot.sg/" target="_blank">Renee French</a>&nbsp;@&nbsp;<a class="about-link" href="https://commons.wikimedia.org/wiki/Category:Go_gopher#/media/File:Go_gopher_app_engine_color.jpg" target="_blank">Wikimedia</a>.</span></div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--1-offset-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <p class="centralized"><strong>Fusce | Ipsum | Tellus</strong></p>
+          <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Vestibulum aliquam sit amet orci quis maximus.</p>
+        </div>
+        <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone imaprog-parent">
+          <p class="imaprog">I'm a<br/>&lt;&#47;programmer&gt;</p>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-tabs__panel" id="portfolio">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <h2 class="tab-title"><em>Stuff I Do</em></h2>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--1-offset-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="well"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png" alt="JavaScript Logo"/><a class="portfolio-caption" href="https://commons.wikimedia.org/wiki/File:JavaScript-logo.png" target="_blank">
+              <div class="caption-frame">
+                <p>Javascript<br/><i class="material-icons">launch</i></p>
+              </div></a></div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-offset-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="well"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/480px-Python-logo-notext.svg.png" alt="Python Logo"/><a class="portfolio-caption" href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg" target="_blank">
+              <div class="caption-frame">
+                <p>Python<br/><i class="material-icons">launch</i></p>
+              </div></a></div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--1-offset-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="well"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/480px-Ruby_logo.svg.png" alt="Ruby Logo"/><a class="portfolio-caption" href="https://commons.wikimedia.org/wiki/File:Ruby_logo.svg" target="_blank">
+              <div class="caption-frame">
+                <p>Ruby<br/><i class="material-icons">launch</i></p>
+              </div></a></div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-offset-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+          <div class="well"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Php_elephant_logo.svg/640px-Php_elephant_logo.svg.png" alt="PHP Logo"/><a class="portfolio-caption" href="https://commons.wikimedia.org/wiki/File:Php_elephant_logo.svg" target="_blank">
+              <div class="caption-frame">
+                <p>PHP<br/><i class="material-icons">launch</i></p>
+              </div></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-tabs__panel" id="contact">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+          <h2 class="tab-title"><em>Lets keep in contact</em></h2>
+        </div>
+      </div>
+      <form id="contactform" action="" method="">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="name" type="text" pattern="[a-zA-Z ]*[a-zA-Z]+"/>
+              <label class="mdl-textfield__label" for="name">Name</label><span class="mdl-textfield__error">Your name is required</span>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="email" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,}$"/>
+              <label class="mdl-textfield__label" for="email">Email</label><span class="mdl-textfield__error">Your email address is required</span>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="phone" type="text" pattern="[0-9-]*[0-9]+$"/>
+              <label class="mdl-textfield__label" for="phone">Phone</label><span class="mdl-textfield__error">Digits only with hyphens for separation</span>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" id="message" type="text" rows="5"></textarea>
+              <label class="mdl-textfield__label" for="message">Message</label>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit" form="contactform" value="Submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nbsp;for&nbsp;<a class="footer-link" href="https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
+</body>
+</html>

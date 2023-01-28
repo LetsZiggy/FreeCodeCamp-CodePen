@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700')
+
+.hidden
+  display : none
+
+body
+  position         : relative
+  display          : flex
+  flex-direction   : row
+  flex-wrap        : wrap
+  align-items      : stretch
+  background-color : #FAFAFA
+  color            : #333
+
+.wrapper
+  position        : relative
+  display         : flex
+  flex-direction  : column
+  justify-content : center
+  align-items     : center
+  align-content   : center
+  width           : 100%
+  min-height      : 80vh
+  font-family     : 'Open Sans Condensed', sans-serif
+  overflow        : hidden
+
+  #normal:checked ~ #simon #menu #difficulty
+    .material-icons
+      transform : translateY(-0.5rem) rotate(-215deg)
+
+  #strict:checked ~ #simon #menu #difficulty
+    .material-icons
+      transform : translateY(-0.5rem) rotate(-135deg)
+
+  #insane:checked ~ #simon #menu #difficulty
+    .material-icons
+      transform : translateY(-0.5rem) rotate(-55deg)
+
+  #insane:checked ~ #info
+    bottom : 0.5rem
+
+  #start-checkbox
+    display : none
+
+  #start-checkbox:checked ~ #simon #menu #start
+    .material-icons:nth-child(2)
+      display : none
+
+    .material-icons:nth-child(3)
+      display : block
+
+  #start-checkbox:checked ~ #simon #board
+    #red, #blue, #green,  #yellow
+      cursor : pointer
+
+    #red:hover
+      background-color : #ee3333
+
+    #red:hover:active
+      background-color : #ff3333
+
+    #blue:hover
+      background-color : #3333ee
+
+    #blue:hover:active
+      background-color : #3333ff
+
+    #green:hover
+      background-color : #33ee33
+
+    #green:hover:active
+      background-color : #33ff33
+
+    #yellow:hover
+      background-color : #eeee33
+
+    #yellow:hover:active
+      background-color : #ffff33
+
+  #simon
+    position  : relative
+    display   : block
+    overflow  : none
+    width     : 70vh
+    height    : 70vh
+    transform : translateY(-1vh)
+    overflow  : hidden
+
+    #board
+      position      : absolute
+      left          : 50%
+      top           : 50%
+      transform     : translate(-50%, -50%)
+      display       : inline-block
+      width         : 100%
+      height        : 100%
+      border        : 3px solid gainsboro
+      border-radius : 50%
+      box-sizing    : border-box
+      overflow      : hidden
+
+      div
+        position    : absolute
+        display     : block
+        width       : 50%
+        height      : 50%
+        box-sizing  : border-box
+        user-select : none
+
+      #red
+        left             : 0rem
+        top              : 0rem
+        transform-origin : 100% 100%
+        border-right     : 3px solid gainsboro
+        background-color : #bb0000
+
+      #red.highlight
+        background-color : #ee3333
+
+      #blue
+        right            : 0rem
+        top              : 0rem
+        transform-origin : 0% 100%
+        border-bottom    : 3px solid gainsboro
+        background-color : #0000bb
+
+      #blue.highlight
+        background-color : #3333ee
+
+      #green
+        left             : 0rem
+        bottom           : 0rem
+        transform-origin : 100% 0%
+        border-top       : 3px solid gainsboro
+        background-color : #00bb00
+
+      #green.highlight
+        background-color : #33ee33
+
+      #yellow
+        right            : 0rem
+        bottom           : 0rem
+        transform-origin : 0% 0%
+        border-left      : 3px solid gainsboro
+        background-color : #bbbb00
+
+      #yellow.highlight
+        background-color : #eeee33
+
+      #cover
+        position         : absolute
+        left             : 0rem
+        top              : 0rem
+        z-index          : 10
+        display          : none
+        width            : 100%
+        height           : 100%
+        background-color : rgba(0, 0, 0, 0)
+        cursor           : default
+
+    #timers
+      position         : absolute
+      left             : 50%
+      top              : 50%
+      transform        : translate(-50%, -50%)
+      display          : inline-block
+      width            : 55%
+      height           : 55%
+      border           : 3px solid gainsboro
+      border-radius    : 50%
+      background-color : grey
+      box-sizing       : border-box
+      overflow         : hidden
+      pointer-events   : none
+      
+      div.next
+        background-color : rgba(0, 0, 0, 0)
+
+      div
+        position         : absolute
+        left             : 50%
+        bottom           : 50%
+        display          : block
+        width            : 6%
+        height           : 100%
+        box-sizing       : border-box
+        transform-origin : 0% 100%
+        background-color : tomato
+        pointer-events   : none
+
+      @for $num from 0 through 59
+        #timer-#{1 + $num}
+          transform : rotate(6deg * $num)
+
+    #scores
+      position         : absolute
+      left             : 50%
+      top              : 50%
+      transform        : translate(-50%, -50%)
+      display          : inline-block
+      width            : 50%
+      height           : 50%
+      border           : 1px solid whitesmoke
+      border-radius    : 50%
+      background-color : whitesmoke
+      box-sizing       : border-box
+      overflow         : hidden
+      pointer-events   : none
+      
+      div.next
+        background-color : lime
+
+      div
+        position         : absolute
+        left             : 50%
+        bottom           : 50%
+        display          : block
+        width            : 18%
+        height           : 100%
+        box-sizing       : border-box
+        transform-origin : 0% 100%
+        background-color : rgba(0, 0, 0, 0)
+        pointer-events   : none
+
+      @for $num from 0 through 19
+        #score-#{1 + $num}
+          transform : rotate(18deg * $num)
+
+    #menu
+      position         : absolute
+      left             : 50%
+      top              : 50%
+      transform        : translate(-50%, -50%)
+      display          : flex
+      flex-direction   : column
+      justify-content  : center
+      align-items      : center
+      align-content    : center
+      width            : 45%
+      height           : 45%
+      border           : 3px solid gainsboro
+      border-radius    : 50%
+      box-sizing       : border-box
+      background-color : #fafafa
+      overflow         : hidden
+
+      #start
+        position        : relative
+        display         : inline-flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        width           : 40%
+        height          : 30%
+        margin          : 1rem 0rem
+        box-sizing      : border-box
+        user-select     : none
+
+        span:hover
+          color : crimson
+
+        span
+          color          : darkgrey
+          padding        : 0.25rem
+          transform      : translateY(0.5rem)
+          text-transform : uppercase
+          cursor         : pointer
+
+        .material-icons:hover
+          color : crimson
+
+        .material-icons
+          transform   : translateY(-0.25rem) rotate(180deg)
+          color       : dimgrey
+          padding     : 0.25rem
+          user-select : none
+          cursor      : pointer
+
+        .material-icons:nth-child(2)
+          display : block
+
+        .material-icons:nth-child(3)
+          display : none
+
+      #difficulty
+        position        : relative
+        display         : inline-flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        width           : 75%
+        height          : 30%
+        margin          : 1rem 0rem
+        box-sizing      : border-box
+        user-select     : none
+        
+        #labels
+          display         : inline-flex
+          flex-direction  : row
+          justify-content : center
+          align-items     : center
+          align-content   : center
+          width           : 100%
+
+          label:hover
+            color : crimson
+
+          label
+            display        : inline-block
+            text-align     : center
+            text-transform : uppercase
+            padding        : 0.125rem
+            color          : darkgrey
+            cursor         : pointer
+
+          #label-normal
+            transform : translateY(1rem)
+            width     : 33.3%
+
+          #label-strict
+            transform : translateY(-0.65rem)
+            width     : 33.4%
+
+          #label-insane
+            transform : translateY(1rem)
+            width     : 33.3%
+
+        .material-icons:hover
+          color : crimson
+
+        .material-icons
+          color     : dimgrey
+          padding   : 0.125rem
+          cursor    : pointer
+
+  #congratulation:hover:active
+    color            : #fafafa
+    background-color : darkred
+    border           : 1px solid whitesmoke
+
+    span
+      color : #fafafa
+
+  #congratulation:hover
+    color            : #fafafa
+    background-color : firebrick
+    border           : 1px solid whitesmoke
+
+    span
+      color : #fafafa
+
+  #congratulation
+    position         : absolute
+    left             : 50%
+    top              : 50%
+    display          : none
+    width            : 17.5rem
+    height           : 17.5rem
+    padding          : 7.5rem 1rem
+    transform        : translate(-50%, -52.5%)
+    border           : 1px solid firebrick
+    border-radius    : 50%
+    box-sizing       : border-box
+    text-align       : center
+    font-size        : 1.5rem
+    line-height      : 2rem
+    color            : #333
+    background-color : whitesmoke
+    box-shadow       : 0rem 1rem 1rem -0.75rem #333
+    user-select      : none
+    cursor           : pointer
+    
+    span
+      color           : firebrick
+      font-weight     : bolder
+      font-size       : 1.5rem
+      line-height     : 2rem
+      text-decoration : underline
+      user-select     : none
+
+  #info
+    position    : absolute
+    left        : 50%
+    bottom      : -1.5rem
+    transform   : translateX(-50%)
+    width       : 100%
+    height      : 1rem
+    text-align  : center
+    line-height : 1rem
+    font-size   : 1rem
+    font-weight : lighter
+    color       : darkgrey
+    transition  : bottom 0.5s ease
+
+.mdl-mini-footer
+  position  : relative
+  flex-grow : 1
+
+  .mdl-logo
+    background-color : #424242
+    color            : #CCC
+    font-size        : 0.8em
+    margin-left      : auto
+    margin-right     : auto
+  
+    .footer-link
+      color : #CCC
+
+  .resources-container
+    position : absolute
+    right    : 5px
+    top      : 5px
+
+    #resources-toggle
+      display : none
+
+      &:checked ~ .resources-backdrop
+        position         : fixed
+        visibility       : visible
+        width            : 100vw
+        height           : 100vh
+        left             : 0
+        top              : 0
+        z-index          : 9
+        opacity          : 1
+        background-color : rgba(0, 0, 0, 0.6)
+        transition       : opacity 0.2 ease-in
+
+      &:checked ~ .resources-content
+        position         : fixed
+        visibility       : visible
+        width            : 50vw
+        height           : 50vh
+        left             : 50%
+        top              : 10vh
+        transform        : translateX(-50%)
+        background-color : #FFF
+        opacity          : 1
+        padding          : 10px 30px
+        z-index          : 999
+        pointer-events   : auto
+        cursor           : auto
+        box-shadow       : 0 0px 0px 6px rgba(0, 0, 0, 0.6)
+
+    .resources-btn
+      display         : block
+      margin          : 0
+      color           : #CCC
+      font-size       : 0.8em
+      font-weight     : bold
+      text-decoration : underline
+      cursor          : pointer
+
+    .resources-content,
+    .resources-backdrop
+      width      : 0
+      height     : 0
+      opacity    : 0
+      visibility : hidden
+      overflow   : hidden
+      cursor     : pointer
+      transition : opacity 0.2s ease-in
+
+    .resources-content
+      position : relative
+      color    : black
+
+      .resources-close
+        position    : absolute
+        right       : 5px
+        top         : 5px
+        padding     : 5px
+        color       : #333
+        font-weight : bold
+        text-align  : center
+        cursor      : pointer
+
+        &:hover
+          color : #C33
+
+@media (max-width: 760px)
+  .wrapper
+    min-height : calc(80vh - 50px)
+
+    #normal:checked ~ #simon #menu #difficulty
+      .material-icons
+        transform : translateY(-0.25rem) rotate(-215deg)
+
+    #strict:checked ~ #simon #menu #difficulty
+      .material-icons
+        transform : translateY(-0.25rem) rotate(-135deg)
+
+    #insane:checked ~ #simon #menu #difficulty
+      .material-icons
+        transform : translateY(-0.25rem) rotate(-55deg)
+
+    #insane:checked ~ #info
+      bottom : 1.25rem
+
+    #simon
+      width  : 50vh
+      height : 50vh
+
+      #menu
+        #difficulty
+          #labels
+            label
+              font-size : 0.85rem
+
+            #label-normal
+              transform : translate(-0.5rem, 0.5rem)
+              width     : 33.3%
+
+            #label-strict
+              transform : translateY(-0.65rem)
+              width     : 33.4%
+
+            #label-insane
+              transform : translate(0.5rem, 0.5rem)
+              width     : 33.3%
+
+@media (max-width: 480px)
+  .mdl-mini-footer
+    .resources-container
+      #resources-toggle
+        &:checked ~ .resources-content
+          width : calc(80vw - 20px)

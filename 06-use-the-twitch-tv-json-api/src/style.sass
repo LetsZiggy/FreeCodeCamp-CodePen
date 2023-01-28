@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons")
+@import url("https://fonts.googleapis.com/css?family=Lato")
+
+$online-color       : MediumSeaGreen
+$online-color-dark  : SeaGreen
+
+$all-color          : LightSlateGray
+$invalid-color-dark : DimGray
+
+$offline-color      : IndianRed
+$offline-color-dark : Firebrick
+
+body
+  position         : relative
+  display          : flex
+  flex-direction   : row
+  flex-wrap        : wrap
+  align-items      : stretch
+  background-color : #FAFAFA
+  color            : #333
+
+.hidden
+  display : none
+
+.wrapper
+  display         : flex
+  flex-direction  : column
+  justify-content : flex-start
+  align-items     : center
+  align-content   : flex-start
+  width           : 100%
+  min-height      : 80vh
+  font-family     : 'Lato', monospace
+
+  .header
+    display         : flex
+    flex-direction  : row
+    justify-content : center
+    align-items     : center
+    align-content   : center
+    flex-wrap       : wrap
+
+    h2
+      width       : 100%
+      text-align  : center
+      font-weight : bolder
+      line-height : 0.5em
+      color       : Black
+      font-family : 'Lato', monospace
+
+    .radio-btn-container
+      position : relative
+      width    : 150px
+      height   : 20px
+
+      #radio-btn-online,
+      #radio-btn-all,
+      #radio-btn-offline
+        display : none
+
+      #radio-btn-online:checked ~ .radio-name-online,
+      #radio-btn-all:checked ~ .radio-name-all,
+      #radio-btn-offline:checked ~ .radio-name-offline
+        color : #FAFAFA
+
+      #radio-btn-online:checked ~ .radio-toggle-bar
+        border-color : $online-color
+
+      #radio-btn-all:checked ~ .radio-toggle-bar
+        border-color : $all-color
+
+      #radio-btn-offline:checked ~ .radio-toggle-bar
+        border-color : $offline-color
+
+      #radio-btn-online:checked ~ .radio-toggle-circle
+        background-color : $online-color
+        left             : 0px
+
+      #radio-btn-all:checked ~ .radio-toggle-circle
+        background-color : $all-color
+        left             : 48px
+
+      #radio-btn-offline:checked ~ .radio-toggle-circle
+        background-color : $offline-color
+        left             : 98px
+
+      .radio-label-online,
+      .radio-label-all,
+      .radio-label-offline
+        position : absolute
+        z-index  : 5
+        top      : 0
+        width    : 50px
+        height   : 20px
+        cursor   : pointer
+
+      .radio-label-online
+        left : 0px
+
+      .radio-label-all
+        left : 50px
+
+      .radio-label-offline
+        left : 100px
+
+      .radio-toggle-bar
+        position      : absolute
+        left          : -4px
+        top           : -4px
+        z-index       : 2
+        width         : 150px
+        height        : 20px
+        border        : 2px solid $all-color
+        border-radius : 50px
+        transition    : all 0.3s ease-in-out
+
+      .radio-name-online,
+      .radio-name-all,
+      .radio-name-offline
+        position        : absolute
+        display         : flex
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        top             : -2px
+        z-index         : 4
+        width           : 50px
+        height          : 20px
+        text-align      : center
+        line-height     : 1em
+        font-size       : 0.65em
+        font-weight     : bolder
+        color           : Black
+        transition      : all 0.3s ease-in-out
+
+      .radio-name-online
+        left : -2px
+
+      .radio-name-all
+        left : 48px
+
+      .radio-name-offline
+        left : 98px
+
+      .radio-toggle-circle
+        position         : absolute
+        top              : -1px
+        z-index          : 3
+        width            : 48px
+        height           : 18px
+        background-color : $all-color
+        border-radius    : 50px
+        transition       : all 0.3s ease-in-out
+
+    hr
+      width         : 100%
+      height        : 1px
+      margin        : 25px 0px 15px 0px
+      border        : 0
+      border-top    : 1px solid rgba(0, 0, 0, 0.1)
+      border-bottom : 1px solid rgba(255, 255, 255, 0.3)
+
+  .results
+    display         : flex
+    flex-direction  : row
+    flex-wrap       : wrap
+    justify-content : space-between
+    align-items     : center
+    align-content   : center
+    width           : 95vw
+
+    .result-item
+      display         : flex
+      flex-basis      : 49.5%
+      margin-bottom   : 10px
+      border-width    : 1px
+      border-style    : solid
+      box-sizing      : border-box
+      color           : #333
+      text-decoration : none
+
+      .result-img-frame
+        display          : flex
+        flex-wrap        : nowrap
+        flex-basis       : 100px
+        height           : 100px
+        background-color : white
+        text-align       : center
+
+        i
+          color     : #666
+          font-size : 3em
+          margin    : auto
+
+        img
+          width  : 100%
+          height : 100%
+
+      .result-info
+        width  : calc(100% - 115px)
+        margin : 0 15px
+
+        h5
+          line-height : 0em
+
+        p
+          line-height : 1.3em
+
+    .offline
+      background-color : $offline-color-dark
+      border-color     : $offline-color-dark
+      transition       : all 0.3s ease-in-out
+
+      &:hover
+        background-color : $offline-color
+        border-color     : $offline-color
+
+    .invalid
+      background-color : $invalid-color-dark
+      border-color     : $invalid-color-dark
+      color            : #FAFAFA
+      opacity          : 0.5
+
+    .online
+      background-color : $online-color-dark
+      border-color     : $online-color-dark
+      transition       : all 0.3s ease-in-out
+
+      &:hover
+        background-color : $online-color
+        border-color     : $online-color
+
+.mdl-mini-footer
+  position  : relative
+  flex-grow : 1
+
+  .mdl-logo
+    background-color : #424242
+    color            : #CCC
+    font-size        : 0.8em
+    margin-left      : auto
+    margin-right     : auto
+  
+    .footer-link
+      color : #CCC
+
+  .resources-container
+    position : absolute
+    right    : 5px
+    top      : 5px
+
+    #resources-toggle
+      display : none
+
+      &:checked ~ .resources-backdrop
+        position         : fixed
+        visibility       : visible
+        width            : 100vw
+        height           : 100vh
+        left             : 0
+        top              : 0
+        z-index          : 9
+        opacity          : 1
+        background-color : rgba(0, 0, 0, 0.6)
+        transition       : opacity 0.2 ease-in
+
+      &:checked ~ .resources-content
+        position         : fixed
+        visibility       : visible
+        width            : 50vw
+        height           : 50vh
+        left             : 50%
+        top              : 10vh
+        transform        : translateX(-50%)
+        background-color : #FFF
+        opacity          : 1
+        padding          : 10px 30px
+        z-index          : 999
+        pointer-events   : auto
+        cursor           : auto
+        box-shadow       : 0 0px 0px 6px rgba(0, 0, 0, 0.6)
+
+    .resources-btn
+      display         : block
+      margin          : 0
+      color           : #CCC
+      font-size       : 0.8em
+      font-weight     : bold
+      text-decoration : underline
+      cursor          : pointer
+
+    .resources-content,
+    .resources-backdrop
+      width      : 0
+      height     : 0
+      opacity    : 0
+      visibility : hidden
+      overflow   : hidden
+      cursor     : pointer
+      transition : opacity 0.2s ease-in
+
+    .resources-content
+      position : relative
+      color    : black
+
+      .resources-close
+        position    : absolute
+        right       : 5px
+        top         : 5px
+        padding     : 5px
+        color       : #333
+        font-weight : bold
+        text-align  : center
+        cursor      : pointer
+
+        &:hover
+          color : #C33
+
+@media (max-width: 760px)
+  .wrapper
+    min-height : calc(80vh - 50px)
+
+    .results
+      flex-direction : column
+      width          : 100%
+      box-sizing     : border-box
+
+      .result-item
+        flex-basis : auto
+        width      : 80%
+
+@media (max-width: 480px)
+  .wrapper
+    .header
+      h2
+        font-size   : 2.5em
+        line-height : 0.8em
+
+    .results
+      .result-item
+        width      : 100%
+
+        .result-img-frame
+          flex-basis : 75px
+          height     : 75px
+
+        .result-info
+          h5
+            font-size : 1em
+
+          p
+            font-size   : 0.75em
+            line-height : 1em
+
+  .mdl-mini-footer
+    .resources-container
+      #resources-toggle
+        &:checked ~ .resources-content
+          width : calc(80vw - 20px)

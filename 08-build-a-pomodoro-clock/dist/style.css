@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+.hidden {
+  display: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #FAFAFA;
+  color: #333;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  min-height: 80vh;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+.wrapper #adjuster {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.wrapper #adjuster .instruction {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #bcbcbc;
+  font-family: "Open Sans Condensed", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #adjuster .draggables {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: auto;
+  margin: 0rem 0rem 5rem 0rem;
+  cursor: pointer;
+}
+.wrapper #adjuster .draggables .drag:hover span, .wrapper #adjuster .draggables .drag:active span, .wrapper #adjuster .draggables .drag:active span {
+  background-color: #343434;
+}
+.wrapper #adjuster .draggables .drag:hover .title, .wrapper #adjuster .draggables .drag:active .title, .wrapper #adjuster .draggables .drag:active .title {
+  color: #343434;
+}
+.wrapper #adjuster .draggables .drag {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0rem 1rem;
+  border: 1px solid #bcbcbc;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #adjuster .draggables .drag span {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: white;
+  background-color: #bcbcbc;
+}
+.wrapper #adjuster .draggables .drag span:first-child {
+  left: 0rem;
+  top: 0rem;
+}
+.wrapper #adjuster .draggables .drag span:not(:first-child) {
+  left: 0rem;
+  bottom: 0rem;
+}
+.wrapper #adjuster .draggables .drag .title {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0rem;
+  top: 2rem;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  color: #9a9a9a;
+}
+.wrapper #adjuster .draggables .drag .amount {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding-top: 1.1rem;
+}
+.wrapper #adjuster .start:active .material-icons {
+  color: #fafafa;
+  background-color: gold;
+}
+.wrapper #adjuster .start:hover:not(:active) .material-icons {
+  color: gold;
+}
+.wrapper #adjuster .start {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+.wrapper #adjuster .start .material-icons {
+  display: inline-block;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: lightseagreen;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #fafafa;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper #timer .clock {
+  position: relative;
+  margin: 1.5rem;
+}
+.wrapper #timer .clock span {
+  font-size: 3rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #timer .clock .between {
+  margin: 0.5rem;
+}
+.wrapper #timer .clock #repeat, .wrapper #timer .clock #minute, .wrapper #timer .clock #second {
+  font-weight: bolder;
+  margin-left: 0.5rem;
+}
+.wrapper #timer .clock .repeat, .wrapper #timer .clock .minute, .wrapper #timer .clock .second {
+  margin-right: 0.5rem;
+}
+.wrapper #timer .clock #type {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bolder;
+  color: lightseagreen;
+}
+.wrapper #timer .clock #type.gold {
+  color: gold !important;
+}
+.wrapper #timer .controller {
+  margin: 1.5rem;
+}
+.wrapper #timer .controller .material-icons {
+  font-size: 2.5rem;
+  padding: 0rem 0.75rem;
+  margin: 0rem 0.75rem;
+  color: #bcbcbc;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.wrapper #timer .controller .material-icons:hover {
+  color: #343434;
+}
+.wrapper #timer .controller #radio-stop:checked ~ #stop-label #stop {
+  color: crimson;
+}
+.wrapper #timer .controller #radio-pause:checked ~ #pause-label #pause {
+  color: gold;
+}
+.wrapper #timer .controller #radio-play:checked ~ #play-label #play {
+  color: lightseagreen;
+}
+
+.mdl-mini-footer {
+  position: relative;
+  flex-grow: 1;
+}
+.mdl-mini-footer .mdl-logo {
+  background-color: #424242;
+  color: #CCC;
+  font-size: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-mini-footer .mdl-logo .footer-link {
+  color: #CCC;
+}
+.mdl-mini-footer .resources-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.mdl-mini-footer .resources-container #resources-toggle {
+  display: none;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-backdrop {
+  position: fixed;
+  visibility: visible;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2 ease-in;
+}
+.mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+  position: fixed;
+  visibility: visible;
+  width: 50vw;
+  height: 50vh;
+  left: 50%;
+  top: 10vh;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  opacity: 1;
+  padding: 10px 30px;
+  z-index: 999;
+  pointer-events: auto;
+  cursor: auto;
+  box-shadow: 0 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+.mdl-mini-footer .resources-container .resources-btn {
+  display: block;
+  margin: 0;
+  color: #CCC;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content,
+.mdl-mini-footer .resources-container .resources-backdrop {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+.mdl-mini-footer .resources-container .resources-content {
+  position: relative;
+  color: black;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+.mdl-mini-footer .resources-container .resources-content .resources-close:hover {
+  color: #C33;
+}
+
+@media (max-width: 760px) {
+  .wrapper {
+    min-height: calc(80vh - 50px);
+  }
+  .wrapper #adjuster {
+    width: 100%;
+  }
+  .wrapper #timer .clock span {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper #adjuster .draggables .drag {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .wrapper #adjuster .draggables .drag span {
+    height: 1.75rem;
+  }
+  .wrapper #adjuster .draggables .drag .title {
+    font-size: 0.85rem;
+  }
+  .wrapper #adjuster .draggables .drag .amount {
+    font-size: 1.25rem;
+  }
+  .wrapper #timer .clock span {
+    font-size: 1.85rem;
+  }
+
+  .mdl-mini-footer .resources-container #resources-toggle:checked ~ .resources-content {
+    width: calc(80vw - 20px);
+  }
+}

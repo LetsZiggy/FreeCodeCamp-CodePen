@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700')
+
+@keyframes warning-icon
+  0%
+    color : black
+    background-color : #fafafa
+  50%
+    color : #fafafa
+    background-color : firebrick
+  100%
+    color : black
+    background-color : #fafafa
+
+@keyframes bounce
+  0%, 75%, 100%
+    transform : translateY(0rem)
+  25%
+    transform : translateY(-1rem)
+
+body
+  position         : relative
+  display          : flex
+  flex-direction   : row
+  flex-wrap        : wrap
+  align-items      : stretch
+  background-color : #FAFAFA
+  color            : #333
+
+.wrapper
+  position    : relative
+  width       : 100%
+  min-height  : 80vh
+  font-family : 'Oxygen', sans-serif
+    
+  .title
+    position    : absolute
+    display     : block
+    left        : 1rem
+    top         : 1rem
+    width       : 2.5rem
+    height      : 2.5rem
+    opacity     : 0.75
+
+  .info
+    position    : absolute
+    display     : block
+    left        : 50%
+    bottom      : 0rem
+    transform   : translateX(-50%)
+    color       : darkgrey
+    font-size   : 0.85rem
+    font-weight : light
+    margin      : 0.85rem 0rem
+    user-select : none
+
+  #menu, #game
+    .go-back
+      position    : absolute
+      left        : 50%
+      bottom      : 5rem
+      transform   : translateX(-50%)
+      padding     : 0.5rem
+      color       : firebrick
+      border      : 1px solid firebrick
+      cursor      : pointer
+      user-select : none
+
+    .go-back:hover
+      color            : #fafafa
+      background-color : firebrick
+
+    .go-back:hover:active
+      color            : #fafafa
+      background-color : darkred
+
+  #menu.play
+    opacity        : 0
+    user-select    : none
+    pointer-events : none
+    transition     : opacity 0.35s ease 0s
+
+  #menu
+    position        : absolute
+    display         : flex
+    flex-direction  : column
+    justify-content : center
+    align-items     : center
+    align-content   : center
+    width           : 100%
+    height          : 100%
+    left            : 50%
+    top             : 50%
+    transform       : translate(-50%, -50%)
+    opacity         : 1
+    user-select     : auto
+    pointer-events  : auto
+    transition      : opacity 0.35s ease 0s
+
+    .interactive
+      position  : relative
+      display   : block
+      width     : 30vw
+      height    : 20vh
+      transform : translateY(-25%)
+      overflow  : hidden
+
+      #play-mode
+        position        : absolute
+        display         : flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        left            : 50%
+        top             : 50%
+        transform       : translate(-50%, -50%)
+        width           : auto
+        height          : auto
+        transition      : left 0.5s ease 0s
+
+        .mode-title
+          align-self      : flex-start
+          text-decoration : underline
+          padding         : 0rem 0.25rem
+          margin          : 1rem 0.25rem
+          line-height     : 2rem
+          font-weight     : bold
+          user-select     : none
+
+        .mode
+          display         : flex
+          flex-direction  : row
+          justify-content : space-between
+          align-items     : center
+          align-content   : center
+
+          .separator
+            font-weight : 300
+            font-size   : 2rem
+            line-height : 2rem
+            padding     : 0.25rem 0.25rem
+            transform   : translateY(-0.25rem)
+            user-select : none
+
+          .button:first-child
+            width : 5.85rem
+
+          .button
+            font-size   : 1rem
+            padding     : 0.25rem 0.25rem
+            margin      : 0rem 0.25rem
+            cursor      : pointer
+            user-select : none
+
+          .button:hover
+            color : firebrick
+          
+          .button:hover:active
+            color            : #fafafa
+            background-color : firebrick
+
+      #icon-pick-one
+        position   : absolute
+        left       : 150%
+        top        : 50%
+        transform  : translate(-50%, -50%)
+        transition : left 0.5s ease 0s
+
+      #icon-pick-two
+        position   : absolute
+        left       : 250%
+        top        : 50%
+        transform  : translate(-50%, -50%)
+        transition : left 0.5s ease 0s
+
+      #icon-pick-one, #icon-pick-two
+        display         : flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        
+        .icon-title
+          align-self      : flex-start
+          text-decoration : underline
+          padding         : 0rem 0.25rem
+          margin          : 1rem 0.6rem
+          line-height     : 2.5rem
+          font-weight     : bold
+          user-select     : none
+        
+        .icon
+          display         : flex
+          flex-direction  : row
+          justify-content : center
+          align-items     : center
+          align-content   : center
+          
+          .material-icons
+            font-size   : 1.5rem
+            padding     : 0.25rem 0.25rem
+            margin      : 0rem 0.5rem
+            cursor      : pointer
+            user-select : none
+
+          .material-icons:hover
+            color : rgb(174,34,34)
+          
+          .material-icons:hover:active
+            color            : #fafafa
+            background-color : rgb(174,34,34)
+
+  #game.play
+    opacity        : 1
+    user-select    : auto
+    pointer-events : auto
+    transition     : opacity 0.35s ease 0s
+
+  #game
+    position        : absolute
+    display         : flex
+    flex-direction  : column
+    justify-content : center
+    align-items     : center
+    align-content   : center
+    width           : 100%
+    height          : 100%
+    left            : 50%
+    top             : 50%
+    transform       : translate(-50%, -50%)
+    opacity         : 0
+    user-select     : none
+    pointer-events  : none
+    transition      : opacity 0.35s ease 0s
+
+    #spinner
+      display         : none
+      flex-direction  : column
+      justify-content : center
+      align-items     : center
+      align-content   : center
+      transform       : translateY(-6rem)
+     
+      .spinner
+        position  : relative
+        display   : inline-block
+        height    : 0px
+        width     : 0px
+
+        span
+          position         : absolute
+          display          : inline-block
+          top              : 0px
+          height           : 0.5rem
+          width            : 0.5rem
+          background-color : dimgrey
+          border-radius    : 50%
+
+          &:nth-child(1)
+            left      : -2rem
+            animation : bounce 1s ease-in-out infinite
+
+          &:nth-child(2)
+            left      : -0.5rem
+            animation : bounce 1s ease-in-out 0.33s infinite
+
+          &:nth-child(3)
+            left      : 1rem
+            animation : bounce 1s ease-in-out 0.66s infinite
+
+    .turn
+      display         : flex
+      flex-direction  : row
+      justify-content : center
+      align-items     : center
+      align-content   : center
+      transform       : translateY(-4.5rem)
+
+      span
+        display     : inline-block
+        font-weight : bold
+        color       : dimgrey
+
+      .material-icons
+        display   : inline-block
+        font-size : 1.5rem
+        margin    : 0rem 0.25rem
+        color     : dimgrey
+
+    #win-message
+      position         : absolute
+      z-index          : 5
+      display          : none
+      text-align       : center
+      left             : 50%
+      top              : 50%
+      transform        : translate(-50%, -55%)
+      width            : 12.5rem
+      height           : 12.5rem
+      color            : firebrick
+      background-color : rgba(250, 250, 250, 0.75)
+      border           : 1px solid firebrick
+      cursor           : pointer
+      user-select      : none
+      box-shadow       : 0px 3px 6px 0px rgba(0, 0, 0, 0.6)
+
+      p:nth-child(1)
+        font-size   : 1.25rem
+        font-weight : bold
+        transform   : translateY(3rem)
+
+      p:nth-child(2)
+        position  : absolute
+        width     : 100%
+        height    : 1.5rem
+        left      : 50%
+        bottom    : 0rem
+        transform : translateX(-50%)
+
+    #win-message:hover
+      color            : #fafafa
+      background-color : rgba(70, 13, 13, 0.75)
+
+    #win-message:hover:active
+      color            : #fafafa
+      background-color : rgba(139, 0, 0, 0.75)
+
+    .board
+      position              : relative
+      display               : grid
+      grid-template-columns : 1fr 1fr 1fr
+      grid-template-rows    : 1fr 1fr 1fr
+      justify-items         : stretch
+      align-items           : stretch
+      justify-content       : center
+      align-content         : center
+      width                 : 12.5rem
+      height                : 12.5rem
+      transform             : translateY(-10%)
+      overflow              : hidden
+
+      div.warning
+        .material-icons
+          animation : warning-icon 0.25s linear 0s 1 forwards
+
+      div.winning-combination
+        .material-icons
+          background-color : firebrick
+
+      div
+        display         : flex
+        flex-direction  : column
+        justify-content : center
+        align-items     : center
+        align-content   : center
+        cursor          : pointer
+
+        .material-icons
+          font-size     : 1.5rem
+          line-height   : 1.5rem
+          padding       : 1rem
+          border-radius : 50%
+          color         : black
+          user-select   : none
+
+      div:nth-child(1)
+        grid-column   : 1 / 2
+        grid-row      : 1 / 2
+        border-right  : 1px solid darkgrey
+        border-bottom : 1px solid darkgrey
+
+      div:nth-child(2)
+        grid-column   : 2 / 3
+        grid-row      : 1 / 2
+        border-bottom : 1px solid darkgrey
+
+      div:nth-child(3)
+        grid-column   : 3 / 4
+        grid-row      : 1 / 2
+        border-left   : 1px solid darkgrey
+        border-bottom : 1px solid darkgrey
+
+      div:nth-child(4)
+        grid-column  : 1 / 2
+        grid-row     : 2 / 3
+        border-right : 1px solid darkgrey
+
+      div:nth-child(5)
+        grid-column : 2 / 3
+        grid-row    : 2 / 3
+
+      div:nth-child(6)
+        grid-column : 3 / 4
+        grid-row    : 2 / 3
+        border-left : 1px solid darkgrey
+
+      div:nth-child(7)
+        grid-column  : 1 / 2
+        grid-row     : 3 / 4
+        border-right : 1px solid darkgrey
+        border-top   : 1px solid darkgrey
+
+      div:nth-child(8)
+        grid-column : 2 / 3
+        grid-row    : 3 / 4
+        border-top  : 1px solid darkgrey
+
+      div:nth-child(9)
+        grid-column : 3 / 4
+        grid-row    : 3 / 4
+        border-left : 1px solid darkgrey
+        border-top  : 1px solid darkgrey
+
+.mdl-mini-footer
+  position  : relative
+  flex-grow : 1
+
+  .mdl-logo
+    background-color : #424242
+    color            : #CCC
+    font-size        : 0.8em
+    margin-left      : auto
+    margin-right     : auto
+  
+    .footer-link
+      color : #CCC
+
+  .resources-container
+    position : absolute
+    right    : 5px
+    top      : 5px
+
+    #resources-toggle
+      display : none
+
+      &:checked ~ .resources-backdrop
+        position         : fixed
+        visibility       : visible
+        width            : 100vw
+        height           : 100vh
+        left             : 0
+        top              : 0
+        z-index          : 9
+        opacity          : 1
+        background-color : rgba(0, 0, 0, 0.6)
+        transition       : opacity 0.2 ease-in
+
+      &:checked ~ .resources-content
+        position         : fixed
+        visibility       : visible
+        width            : 50vw
+        height           : 50vh
+        left             : 50%
+        top              : 10vh
+        transform        : translateX(-50%)
+        background-color : #FFF
+        opacity          : 1
+        padding          : 10px 30px
+        z-index          : 999
+        pointer-events   : auto
+        cursor           : auto
+        box-shadow       : 0 0px 0px 6px rgba(0, 0, 0, 0.6)
+
+    .resources-btn
+      display         : block
+      margin          : 0
+      color           : #CCC
+      font-size       : 0.8em
+      font-weight     : bold
+      text-decoration : underline
+      cursor          : pointer
+
+    .resources-content,
+    .resources-backdrop
+      width      : 0
+      height     : 0
+      opacity    : 0
+      visibility : hidden
+      overflow   : hidden
+      cursor     : pointer
+      transition : opacity 0.2s ease-in
+
+    .resources-content
+      position : relative
+      color    : black
+
+      .resources-close
+        position    : absolute
+        right       : 5px
+        top         : 5px
+        padding     : 5px
+        color       : #333
+        font-weight : bold
+        text-align  : center
+        cursor      : pointer
+
+        &:hover
+          color : #C33
+
+@media (max-width: 760px)
+  .wrapper
+    min-height : calc(80vh - 50px)
+
+    .info
+      width      : 100%
+      text-align : center
+
+    #menu
+      .interactive
+        width : 70%
+
+@media (max-width: 480px)
+  .mdl-mini-footer
+    .resources-container
+      #resources-toggle
+        &:checked ~ .resources-content
+          width : calc(80vw - 20px)

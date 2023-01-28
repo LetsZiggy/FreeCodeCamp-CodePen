@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - FreeCodeCamp - Build a Simon Game</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeCodeCamp - Build a Simon Game</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.getmdl.io/1.2.1/material.indigo-red.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <audio class="hidden" id="audio-red" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mp3"></audio>
+  <audio class="hidden" id="audio-blue" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mp3"></audio>
+  <audio class="hidden" id="audio-green" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mp3"></audio>
+  <audio class="hidden" id="audio-yellow" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mp3"></audio>
+  <audio class="hidden" id="audio-wrong" src="https://www.soundjay.com/button/beep-02.mp3" type="audio/mp3"></audio>
+  <input class="hidden" id="normal" type="radio" name="difficulty" checked="checked"/>
+  <input class="hidden" id="strict" type="radio" name="difficulty"/>
+  <input class="hidden" id="insane" type="radio" name="difficulty"/>
+  <input id="start-checkbox" type="checkbox" onchange="startGame(event)"/>
+  <div id="simon">
+    <div id="board">
+      <div id="red" onclick="handleClick(1)"></div>
+      <div id="blue" onclick="handleClick(2)"></div>
+      <div id="green" onclick="handleClick(3)"></div>
+      <div id="yellow" onclick="handleClick(4)"></div>
+      <div id="cover"></div>
+    </div>
+    <div id="timers">
+      <div class="next" id="timer-1"></div>
+      <div class="next" id="timer-2"></div>
+      <div class="next" id="timer-3"></div>
+      <div class="next" id="timer-4"></div>
+      <div class="next" id="timer-5"></div>
+      <div class="next" id="timer-6"></div>
+      <div class="next" id="timer-7"></div>
+      <div class="next" id="timer-8"></div>
+      <div class="next" id="timer-9"></div>
+      <div class="next" id="timer-10"></div>
+      <div class="next" id="timer-11"></div>
+      <div class="next" id="timer-12"></div>
+      <div class="next" id="timer-13"></div>
+      <div class="next" id="timer-14"></div>
+      <div class="next" id="timer-15"></div>
+      <div class="next" id="timer-16"></div>
+      <div class="next" id="timer-17"></div>
+      <div class="next" id="timer-18"></div>
+      <div class="next" id="timer-19"></div>
+      <div class="next" id="timer-20"></div>
+      <div class="next" id="timer-21"></div>
+      <div class="next" id="timer-22"></div>
+      <div class="next" id="timer-23"></div>
+      <div class="next" id="timer-24"></div>
+      <div class="next" id="timer-25"></div>
+      <div class="next" id="timer-26"></div>
+      <div class="next" id="timer-27"></div>
+      <div class="next" id="timer-28"></div>
+      <div class="next" id="timer-29"></div>
+      <div class="next" id="timer-30"></div>
+      <div class="next" id="timer-31"></div>
+      <div class="next" id="timer-32"></div>
+      <div class="next" id="timer-33"></div>
+      <div class="next" id="timer-34"></div>
+      <div class="next" id="timer-35"></div>
+      <div class="next" id="timer-36"></div>
+      <div class="next" id="timer-37"></div>
+      <div class="next" id="timer-38"></div>
+      <div class="next" id="timer-39"></div>
+      <div class="next" id="timer-40"></div>
+      <div class="next" id="timer-41"></div>
+      <div class="next" id="timer-42"></div>
+      <div class="next" id="timer-43"></div>
+      <div class="next" id="timer-44"></div>
+      <div class="next" id="timer-45"></div>
+      <div class="next" id="timer-46"></div>
+      <div class="next" id="timer-47"></div>
+      <div class="next" id="timer-48"></div>
+      <div class="next" id="timer-49"></div>
+      <div class="next" id="timer-50"></div>
+      <div class="next" id="timer-51"></div>
+      <div class="next" id="timer-52"></div>
+      <div class="next" id="timer-53"></div>
+      <div class="next" id="timer-54"></div>
+      <div class="next" id="timer-55"></div>
+      <div class="next" id="timer-56"></div>
+      <div class="next" id="timer-57"></div>
+      <div class="next" id="timer-58"></div>
+      <div class="next" id="timer-59"></div>
+      <div class="next" id="timer-60"></div>
+    </div>
+    <div id="scores">
+      <div id="score-1"></div>
+      <div id="score-2"></div>
+      <div id="score-3"></div>
+      <div id="score-4"></div>
+      <div id="score-5"></div>
+      <div id="score-6"></div>
+      <div id="score-7"></div>
+      <div id="score-8"></div>
+      <div id="score-9"></div>
+      <div id="score-10"></div>
+      <div id="score-11"></div>
+      <div id="score-12"></div>
+      <div id="score-13"></div>
+      <div id="score-14"></div>
+      <div id="score-15"></div>
+      <div id="score-16"></div>
+      <div id="score-17"></div>
+      <div id="score-18"></div>
+      <div id="score-19"></div>
+      <div id="score-20"></div>
+    </div>
+    <div id="menu">
+      <label id="start" for="start-checkbox"><span>Start</span><i class="material-icons">toll</i><i class="material-icons">fiber_smart_record</i></label>
+      <div id="difficulty">
+        <div id="labels">
+          <label id="label-normal" for="normal" onclick="setDifficulty('normal')">Normal</label>
+          <label id="label-strict" for="strict" onclick="setDifficulty('strict')">Strict</label>
+          <label id="label-insane" for="insane" onclick="setDifficulty('insane')">Insane</label>
+        </div><i class="material-icons" onclick="setDifficulty('loop')">loupe</i>
+      </div>
+    </div>
+  </div>
+  <div id="congratulation" onclick="reset()">You've completed this&nbsp;<span>Simon</span>&nbsp;game on&nbsp;<span>Normal</span></div>
+  <div id="info">On insane difficulty, you may use keyboard to trigger the colours. &nbsp;&nbsp;&nbsp; Red : 1 | Blue : 2 | Green : 3 | Yellow : 4</div>
+</div>
+<footer class="mdl-mini-footer">
+  <div class="mdl-logo">Written by&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/letsziggy" target="_blank">LetsZiggy</a>&nbsp;for&nbsp;<a class="footer-link" href="https://www.freecodecamp.org/challenges/build-a-simon-game" target="_blank">FreeCodeCamp Challenge</a>.</div>
+  <div class="resources-container">
+    <input id="resources-toggle" type="checkbox"/>
+    <label class="resources-btn" for="resources-toggle">Resources</label>
+    <label class="resources-backdrop" for="resources-toggle"></label>
+    <div class="resources-content">
+      <label class="resources-close" for="resources-toggle">&#x2715;</label>
+      <h5>Resources</h5>
+      <hr/>
+      <ul>
+        <li><a href="https://codemyui.com/pure-css-modal-box-on-button-click/" target="_blank">Pure CSS Modal Box On Button Click</a></li>
+        <li><a href="https://www.soundjay.com/" target="_blank">SoundJay</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://code.getmdl.io/1.1.3/material.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
